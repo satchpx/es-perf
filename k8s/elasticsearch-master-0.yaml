@@ -1,0 +1,308 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2019-05-14T02:39:59Z"
+  generateName: elasticsearch-master-
+  labels:
+    app: elasticsearch-master
+    chart: elasticsearch-7.0.1-alpha1
+    controller-revision-hash: elasticsearch-master-64b6864cb6
+    heritage: Tiller
+    release: datastore
+    statefulset.kubernetes.io/pod-name: elasticsearch-master-0
+  name: elasticsearch-master-0
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: StatefulSet
+    name: elasticsearch-master
+    uid: 91634656-75f1-11e9-a49c-ea4e62230ee9
+  resourceVersion: "818423"
+  selfLink: /api/v1/namespaces/default/pods/elasticsearch-master-0
+  uid: 917a19b0-75f1-11e9-a49c-ea4e62230ee9
+spec:
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - elasticsearch-master
+        topologyKey: kubernetes.io/hostname
+  containers:
+  - env:
+    - name: node.name
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.name
+    - name: cluster.initial_master_nodes
+      value: elasticsearch-master-0,elasticsearch-master-1,elasticsearch-master-2,
+    - name: discovery.seed_hosts
+      value: elasticsearch-master-headless
+    - name: cluster.name
+      value: elasticsearch
+    - name: network.host
+      value: 0.0.0.0
+    - name: ES_JAVA_OPTS
+      value: -Xmx26g -Xms26g
+    - name: node.data
+      value: "true"
+    - name: node.ingest
+      value: "true"
+    - name: node.master
+      value: "true"
+    - name: KUBERNETES_PORT_443_TCP_ADDR
+      value: dj0510b-5c9514ae.hcp.eastus2.azmk8s.io
+    - name: KUBERNETES_PORT
+      value: tcp://dj0510b-5c9514ae.hcp.eastus2.azmk8s.io:443
+    - name: KUBERNETES_PORT_443_TCP
+      value: tcp://dj0510b-5c9514ae.hcp.eastus2.azmk8s.io:443
+    - name: KUBERNETES_SERVICE_HOST
+      value: dj0510b-5c9514ae.hcp.eastus2.azmk8s.io
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.0.1
+    imagePullPolicy: IfNotPresent
+    name: elasticsearch
+    ports:
+    - containerPort: 9200
+      name: http
+      protocol: TCP
+    - containerPort: 9300
+      name: transport
+      protocol: TCP
+    readinessProbe:
+      exec:
+        command:
+        - sh
+        - -c
+        - |
+          #!/usr/bin/env bash -e
+          # If the node is starting up wait for the cluster to be ready (request params: 'wait_for_status=green&timeout=1s' )
+          # Once it has started only check that the node itself is responding
+          START_FILE=/tmp/.es_start_file
+
+          http () {
+              local path="${1}"
+              if [ -n "${ELASTIC_USERNAME}" ] && [ -n "${ELASTIC_PASSWORD}" ]; then
+                BASIC_AUTH="-u ${ELASTIC_USERNAME}:${ELASTIC_PASSWORD}"
+              else
+                BASIC_AUTH=''
+              fi
+              curl -XGET -s -k --fail ${BASIC_AUTH} http://127.0.0.1:9200${path}
+          }
+
+          if [ -f "${START_FILE}" ]; then
+              echo 'Elasticsearch is already running, lets check the node is healthy'
+              http "/"
+          else
+              echo 'Waiting for elasticsearch cluster to become cluster to be ready (request params: "wait_for_status=green&timeout=1s" )'
+              if http "/_cluster/health?wait_for_status=green&timeout=1s" ; then
+                  touch ${START_FILE}
+                  exit 0
+              else
+                  echo 'Cluster is not yet ready (request params: "wait_for_status=green&timeout=1s" )'
+                  exit 1
+              fi
+          fi
+      failureThreshold: 3
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      successThreshold: 3
+      timeoutSeconds: 5
+    resources:
+      limits:
+        cpu: "14"
+        memory: 50Gi
+      requests:
+        cpu: "14"
+        memory: 50Gi
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /usr/share/elasticsearch/data
+      name: elasticsearch-master
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-pjvzd
+      readOnly: true
+  - command:
+    - sh
+    - -c
+    - |
+      #!/usr/bin/env bash
+      set -eo pipefail
+
+      http () {
+          local path="${1}"
+          if [ -n "${ELASTIC_USERNAME}" ] && [ -n "${ELASTIC_PASSWORD}" ]; then
+            BASIC_AUTH="-u ${ELASTIC_USERNAME}:${ELASTIC_PASSWORD}"
+          else
+            BASIC_AUTH=''
+          fi
+          curl -XGET -s -k --fail ${BASIC_AUTH} http://elasticsearch-master:9200${path}
+      }
+
+      cleanup () {
+        while true ; do
+          local master="$(http "/_cat/master?h=node")"
+          if [[ $master == "elasticsearch-master"* && $master != "${NODE_NAME}" ]]; then
+            echo "This node is not master."
+            break
+          fi
+          echo "This node is still master, waiting gracefully for it to step down"
+          sleep 1
+        done
+
+        exit 0
+      }
+
+      trap cleanup SIGTERM
+
+      sleep infinity &
+      wait $!
+    env:
+    - name: NODE_NAME
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.name
+    - name: KUBERNETES_PORT_443_TCP_ADDR
+      value: dj0510b-5c9514ae.hcp.eastus2.azmk8s.io
+    - name: KUBERNETES_PORT
+      value: tcp://dj0510b-5c9514ae.hcp.eastus2.azmk8s.io:443
+    - name: KUBERNETES_PORT_443_TCP
+      value: tcp://dj0510b-5c9514ae.hcp.eastus2.azmk8s.io:443
+    - name: KUBERNETES_SERVICE_HOST
+      value: dj0510b-5c9514ae.hcp.eastus2.azmk8s.io
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.0.1
+    imagePullPolicy: IfNotPresent
+    name: elasticsearch-master-graceful-termination-handler
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-pjvzd
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  hostname: elasticsearch-master-0
+  initContainers:
+  - command:
+    - sysctl
+    - -w
+    - vm.max_map_count=262144
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.0.1
+    imagePullPolicy: IfNotPresent
+    name: configure-sysctl
+    resources: {}
+    securityContext:
+      privileged: true
+      procMount: Default
+      runAsUser: 0
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-pjvzd
+      readOnly: true
+  nodeName: aks-nodepool1-25948058-0
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 1000
+  serviceAccount: default
+  serviceAccountName: default
+  subdomain: elasticsearch-master-headless
+  terminationGracePeriodSeconds: 120
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: elasticsearch-master
+    persistentVolumeClaim:
+      claimName: elasticsearch-master-elasticsearch-master-0
+  - name: default-token-pjvzd
+    secret:
+      defaultMode: 420
+      secretName: default-token-pjvzd
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2019-05-14T02:41:04Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2019-05-14T12:27:24Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2019-05-14T12:27:24Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2019-05-14T02:40:05Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://54b3ed85478465c19408ea1af3c13104ee24e39bb4db02891c3fd8939c720f38
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.0.1
+    imageID: docker-pullable://docker.elastic.co/elasticsearch/elasticsearch@sha256:ab3884396356595a665b88fbf61d4f0c1c39eb8891c77b1b72d5fe83ae3a1c75
+    lastState:
+      terminated:
+        containerID: docker://309d5b23d2b6517bfb2252c55680fc67d15fc2161efaa642265e350a32435a5a
+        exitCode: 255
+        finishedAt: "2019-05-14T12:24:06Z"
+        reason: Error
+        startedAt: "2019-05-14T02:41:05Z"
+    name: elasticsearch
+    ready: true
+    restartCount: 1
+    state:
+      running:
+        startedAt: "2019-05-14T12:24:41Z"
+  - containerID: docker://a969259ff9dc783e92b124dc9639383c0cfd5ec5fa68a0056744a4b42debe181
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.0.1
+    imageID: docker-pullable://docker.elastic.co/elasticsearch/elasticsearch@sha256:ab3884396356595a665b88fbf61d4f0c1c39eb8891c77b1b72d5fe83ae3a1c75
+    lastState:
+      terminated:
+        containerID: docker://a5fbf1bf6899b70bfe612963e92c9286fca1619e4d294286d5c0a4a7af135fdb
+        exitCode: 255
+        finishedAt: "2019-05-14T12:24:06Z"
+        reason: Error
+        startedAt: "2019-05-14T02:41:06Z"
+    name: elasticsearch-master-graceful-termination-handler
+    ready: true
+    restartCount: 1
+    state:
+      running:
+        startedAt: "2019-05-14T12:24:42Z"
+  hostIP: 10.240.0.4
+  initContainerStatuses:
+  - containerID: docker://765fddaab480e66d352900b9f47e077d18300d82befdcd6f1237a26a14d06e2e
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.0.1
+    imageID: docker-pullable://docker.elastic.co/elasticsearch/elasticsearch@sha256:ab3884396356595a665b88fbf61d4f0c1c39eb8891c77b1b72d5fe83ae3a1c75
+    lastState: {}
+    name: configure-sysctl
+    ready: true
+    restartCount: 1
+    state:
+      terminated:
+        containerID: docker://765fddaab480e66d352900b9f47e077d18300d82befdcd6f1237a26a14d06e2e
+        exitCode: 0
+        finishedAt: "2019-05-14T12:24:40Z"
+        reason: Completed
+        startedAt: "2019-05-14T12:24:40Z"
+  phase: Running
+  podIP: 10.244.5.27
+  qosClass: Burstable
+  startTime: "2019-05-14T02:40:05Z"

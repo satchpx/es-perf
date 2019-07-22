@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: es
+spec:
+  selector:
+    matchLabels:
+      app: es
+  replicas: 1
+  serviceName: es
+  template:
+    metadata:
+      labels:
+        app: es
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: kubernetes.io/role
+                operator: In
+                values:
+                - agent
+            topologyKey: "kubernetes.io/hostname"
+      containers:
+      - name: es
+        image: david62243/elasticsearch:7-1node
+        imagePullPolicy: Always
