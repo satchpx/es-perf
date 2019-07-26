@@ -43,7 +43,7 @@ spec:
         - name: network.host
           value: 0.0.0.0
         name: esrally-ss
-        image: david62243/esrally:v0.1
+        image: satchpx/esrally:v0.1
         command:
         - sh
         - -c
