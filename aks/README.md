@@ -9,3 +9,7 @@
 ./deploy.sh -g sathya-px-es -r eastus2 -c sathya-px-es1 -n 6 -s 1024 -d Premium_LRS
 ```
 
+## Deploy es-rally
+
+## Deploy the data pipeline
+

@@ -138,6 +138,8 @@ echo "[INFO]: Attaching disks to VMs now..."
 for vm in $(az vm list --resource-group ${RG_UPPER} | jq '.[].name' | tr -d "\""); do
     echo "Attaching disk to vm $vm"
     az vm disk attach --resource-group ${RG_UPPER} --vm-name $vm --name px_$vm --size-gb ${DISK_SIZE_GB} --sku ${DISK_SKU} --new
+    # Add a disk for internal kvdb
+    az vm disk attach --resource-group ${RG_UPPER} --vm-name $vm --name px_$vm --size-gb 64 --sku ${DISK_SKU} --new
 done
 
 # Install PX
