@@ -6,7 +6,6 @@ metadata:
   labels:
     app: esrally-ss
 spec:
-  ports:
   clusterIP: None
   selector:
     app: esrally-ss

@@ -2,8 +2,8 @@ Setup
 =====
 
 ```
-$ docker build -t gdmello/esrally:0.1 .
-$ docker run -it gdmello/esrally:0.1 /bin/bash
+$ docker build -t satchpx/esrally:v0.2 .
+$ docker run -it satchpx/esrally:v0.2 /bin/bash
 root@81a7fb4e76fd:/# esrally list tracks
 
     ____        ____
@@ -37,7 +37,7 @@ Run A Performance Test
 ======================
 Performance tests in Rally include 'races' around one or more 'tracks'.
 ```
-$ docker run gdmello/esrally:0.1 --track=geopoint --target-hosts=10.7.18.21:31018 --user-tag="test-type:baseline-geopoint-append-no-conflicts" --pipeline=benchmark-only --challenge=append-no-conflicts
+$ docker run satchpx/esrally:v0.2 --track=geopoint --target-hosts=10.7.18.21:31018 --user-tag="test-type:baseline-geopoint-append-no-conflicts" --pipeline=benchmark-only --challenge=append-no-conflicts
 $ esrally --track=geopoint --challenge=append-fast-with-conflicts --user-tag= --pipeline=benchmark-only
 # run against existing ES cluster
 $ esrally --track=nyc_taxis --target-hosts=10.5.5.10:9200,10.5.5.11:9200,10.5.5.12:9200 --pipeline=benchmark-only
