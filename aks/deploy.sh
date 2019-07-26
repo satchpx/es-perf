@@ -54,7 +54,7 @@ if [[ (-z ${RG_NAME}) || (-z ${REGION}) || (-z ${CLUSTER_NAME}) ]]; then
     exit 1
 fi
 
-if [[ (${DISK_SKU} != "Standard_LRS") && (${DISK_SKU} != "StandardSSD_LRS") && (${DISK_SKU} != "UltraSSD_LRS") ]]; then
+if [[ (${DISK_SKU} != "Standard_LRS") && (${DISK_SKU} != "StandardSSD_LRS") && (${DISK_SKU} != "UltraSSD_LRS") && (${DISK_SKU} != "Premium_LRS") ]]; then
     echo "[ERROR]: Invalid Disk type"
     printUsage
     exit 1
@@ -64,14 +64,60 @@ fi
 az login
 az group create --name ${RG_NAME} --location ${REGION}
 
+echo "Create Virtual Network"
+
+AKS_SUBNET_NAME=${RG_NAME}AksSubnet
+
+az network vnet create \
+    --resource-group ${RG_NAME} \
+    --name ${RG_NAME} \
+    --address-prefixes 10.0.0.0/8 \
+    --subnet-name ${AKS_SUBNET_NAME} \
+    --subnet-prefix 10.240.0.0/16
+
+echo "Create Node Subnet"
+
+NODE_SUBNET_NAME=${RG_NAME}NodeSubnet
+
+az network vnet subnet create \
+    --resource-group ${RG_NAME} \
+    --vnet-name ${RG_NAME} \
+    --name ${NODE_SUBNET_NAME} \
+    --address-prefixes 10.241.0.0/16
+
+echo "Assign Role"
+
+APPID='e992b27b-740f-4c11-a458-4a73c4425c58'
+TENANTID='ca9700ce-d438-4389-b86f-09c48f71d0ce'
+OBJECTID='1be235b6-4571-4372-8516-248c77d7df29'
+APPPW='TtH*K-VFOdH/+DCFQTQzXu3rwIuZ7M90'
+
+VNET=$(az network vnet show --resource-group ${RG_NAME} --name ${RG_NAME} --query id -o tsv)
+az role assignment create --assignee ${APPID} --scope ${VNET} --role Contributor
+
 # Get latest kubernetes version
 K8S_VER=`az aks get-versions --location westus --output table | grep None | awk '{print $1}'`
 
 # Set cluster max size
 CLUSTER_SIZE_MAX=$((CLUSTER_SIZE*2))
 echo "[INFO]: Deploying AKS cluster ${CLUSTER_NAME}"
+AKSSUBNET=$(az network vnet subnet show --resource-group ${RG_NAME} --vnet-name ${RG_NAME} --name ${AKS_SUBNET_NAME} --query id -o tsv)
+
 #az aks create --resource-group ${RG_NAME} --name ${CLUSTER_NAME} --node-count ${CLUSTER_SIZE} --enable-vmss --enable-cluster-autoscaler --min-count ${CLUSTER_SIZE} --max-count ${CLUSTER_SIZE_MAX} --enable-addons monitoring --generate-ssh-keys --kubernetes-version ${K8S_VER}
-az aks create --resource-group ${RG_NAME} --name ${CLUSTER_NAME} --node-count ${CLUSTER_SIZE} --enable-addons monitoring --generate-ssh-keys --kubernetes-version ${K8S_VER}
+az aks create \
+    --resource-group ${RG_NAME} \
+    --node-vm-size Standard_D16s_v3 \
+    --node-osdisk-size 100 \
+    --name ${CLUSTER_NAME} \
+    --node-count ${CLUSTER_SIZE} \
+    --enable-addons monitoring \
+    --generate-ssh-keys \
+    --network-plugin azure \
+    --service-cidr 10.0.0.0/16 \
+    --dns-service-ip 10.0.0.10 \
+    --docker-bridge-address 172.17.0.1/16 \
+    --vnet-subnet-id ${AKSSUBNET} \
+    --kubernetes-version ${K8S_VER}
 echo "[INFO]: backing up current kube-config into \"~/.kube/config.bak\""
 mv ~/.kube/config ~/.kube/config.bak
 cat /dev/null > ~/.kube/config
