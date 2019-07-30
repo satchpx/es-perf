@@ -25,6 +25,7 @@ spec:
           - --report-format=csv
           {{ end}}
         image: {{ .Values.image }}
+        imagePullPolicy: {{ .Values.imagePullPolicy }}
       {{- if .Values.reportDir }}
         volumeMounts:
         - name: report

@@ -4,4 +4,4 @@ RUN pip3 install esrally
 
 COPY ["rally.ini", "/root/.rally/rally.ini"]
 
-ENTRYPOINT ["esrally"]
+ENTRYPOINT ["/bin/bash"]
