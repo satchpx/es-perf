@@ -14,14 +14,14 @@
 ### Deploy elasticsearch without px (managed premium)
 ```
 # Install master
-helm install --name datastore-elasticsearch-master --values manifests/es-master-values-nopx.yaml ../helm-charts/elastic/elasticsearch
+helm install --name datastore-elasticsearch-master --values install/manifests/es-master-values-nopx.yaml helm-charts/elastic/elasticsearch
 # Install client
-helm install --name datastore-elasticsearch-client --values manifests/es-client-values-nopx.yaml ../helm-charts/elastic/elasticsearch
+helm install --name datastore-elasticsearch-client --values install/manifests/es-client-values-nopx.yaml helm-charts/elastic/elasticsearch
 ```
 
 ### Deploy gateway (kafka)
 ```
-helm  upgrade --wait --timeout=600 --install --values ../helm-charts/confluent/values-prod.yaml gateway ../helm-charts/confluent
+helm  upgrade --wait --timeout=600 --install --values ../helm-charts/confluent/values-prod.yaml gateway helm-charts/confluent
 ```
 
 ### Deploy spark operator
@@ -45,12 +45,12 @@ kafka-topics --zookeeper gateway-cp-zookeeper:2181 --topic planes10 --create --r
 
 ### Deploy spark job
 ```
-kubectl apply -f manifests/sparkop-es-2.4.1.yaml
+kubectl apply -f install/manifests/sparkop-es-2.4.1.yaml
 ```
 
 ### Deploy rttest-mon
 ```
-kubectl apply -f manifests/rttest-mon.yaml
+kubectl apply -f install/manifests/rttest-mon.yaml
 ```
 
 ### Note: Wait for the pods to become ready before proceeding.
@@ -71,20 +71,20 @@ java -cp target/rttest.jar com.esri.rttest.mon.KafkaTopicMon gateway-cp-kafka:90
 
 ### Start Send
 ```
-kubectl apply -f manifests/rttest-send-kafka-25k-5m.yaml
+kubectl apply -f install/manifests/rttest-send-kafka-25k-5m.yaml
 ```
 
 
 ### Deploy elasticsearch with px
 #### Create the storageClass
 ```
-kubectl apply -f ../manifests/portworx-storageclasses.yaml
+kubectl apply -f install/manifests/portworx-storageclasses.yaml
 ```
 
 #### Deploy elasticsearch using helm
 ```
 # Install master
-helm install --name datastore-elasticsearch-master --values manifests/es-master-values-px-rf1.yaml ../helm-charts/elastic/elasticsearch
+helm install --name datastore-elasticsearch-master --values install/manifests/es-master-values-px-rf1.yaml helm-charts/elastic/elasticsearch
 # Install client
-helm install --name datastore-elasticsearch-client --values manifests/es-client-values-px-rf1.yaml ../helm-charts/elastic/elasticsearch
+helm install --name datastore-elasticsearch-client --values install/manifests/es-client-values-px-rf1.yaml helm-charts/elastic/elasticsearch
 ```
