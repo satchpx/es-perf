@@ -88,11 +88,3 @@ helm install --name datastore-elasticsearch-master --values manifests/es-master-
 # Install client
 helm install --name datastore-elasticsearch-client --values manifests/es-client-values-px-rf1.yaml ../helm-charts/elastic/elasticsearch
 ```
-
-
-## Deploy es-rally
-```
-helm install --name elasticsearch-rally ../helm-charts/elasticsearch-rally
-```
-
-
