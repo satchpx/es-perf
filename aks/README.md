@@ -11,7 +11,7 @@
 
 ## Deploy the data pipeline
 
-### Deploy elasticsearch
+### Deploy elasticsearch without px (managed premium)
 ```
 # Install master
 helm install --name datastore-elasticsearch-master --values manifests/es-master-values-nopx.yaml ../helm-charts/elastic/elasticsearch
@@ -73,6 +73,22 @@ java -cp target/rttest.jar com.esri.rttest.mon.KafkaTopicMon gateway-cp-kafka:90
 ```
 kubectl apply -f manifests/rttest-send-kafka-25k-5m.yaml
 ```
+
+
+### Deploy elasticsearch with px
+#### Create the storageClass
+```
+kubectl apply -f ../manifests/portworx-storageclasses.yaml
+```
+
+#### Deploy elasticsearch using helm
+```
+# Install master
+helm install --name datastore-elasticsearch-master --values manifests/es-master-values-px-rf1.yaml ../helm-charts/elastic/elasticsearch
+# Install client
+helm install --name datastore-elasticsearch-client --values manifests/es-client-values-px-rf1.yaml ../helm-charts/elastic/elasticsearch
+```
+
 
 ## Deploy es-rally
 ```
