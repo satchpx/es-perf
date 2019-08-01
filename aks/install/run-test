@@ -35,5 +35,6 @@ if [ $OP == "start" ]; then
     # Deploy the send job
     kubectl apply -f manifests/rttest-send-kafka-25k-5m.yaml
 else
-
+    kubectl delete -f manifests/rttest-send-kafka-25k-5m.yaml
+    kubectl apply -f manifests/sparkop-es-2.4.1.yaml
 fi
