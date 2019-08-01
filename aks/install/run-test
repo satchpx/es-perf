@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+printUsage() {
+    echo "Usage: $0 [start|stop]"
+    cat <<EOEG
+Example:
+    run-test start # To start the test
+    run-test stop # To stop the test
+EOEG
+}
+
+if [ "$#" -lt 1 ]; then
+    printUsage
+    exit 1
+fi
+
+OP=$1
+
+if [[ ( $OP != "start" ) && ( $OP != "stop" ) ]]; then
+    printUsage
+    exit 1
+fi
+
+if [ $OP == "start" ]; then
+    # Deploy spark application (batch job)
+    kubectl apply -f manifests/sparkop-es-2.4.1.yaml
+    # @TODO: Add logic to wait for the pods to become ready
+    # For now, just sleep
+    sleep 120
+
+    # Deploy the monitors
+    kubectl apply -f manifests/rttest-ktm.yaml
+    kubectl apply -f manifests/rttest-eim.yaml
+    
+    # Deploy the send job
+    kubectl apply -f manifests/rttest-send-kafka-25k-5m.yaml
+else
+
+fi
