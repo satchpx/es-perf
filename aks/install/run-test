@@ -36,5 +36,5 @@ if [ $OP == "start" ]; then
     kubectl apply -f manifests/rttest-send-kafka-25k-5m.yaml
 else
     kubectl delete -f manifests/rttest-send-kafka-25k-5m.yaml
-    kubectl apply -f manifests/sparkop-es-2.4.1.yaml
+    kubectl delete -f manifests/sparkop-es-2.4.1.yaml
 fi
