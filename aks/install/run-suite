@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+COUNT=$1
+
+if [ -z ${COUNT} ]; then
+    COUNT=25
+fi
+
+DIRNAME=`dirname $0`
+for iter in $(seq 1 $COUNT); do
+    echo "[INFO]: Begin iteration ${iter}"
+
+    # start the test
+    echo "[INFO]: Starting the test..."
+    eval "${DIRNAME}/run-test start"
+    sleep 600
+    echo "[INFO]: Completed iteration ${num}"
+    
+    echo "[INFO]: Begin tear down"
+    eval "${DIRNAME}/run-test stop"
+    sleep 120
+    echo "[INFO]: Tear down complete"
+done
