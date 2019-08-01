@@ -41,8 +41,9 @@ spec:
         command:
           - sh
           - -c
-          - cd /opt/rttest
-          - java -cp target/rttest.jar com.esri.rttest.mon.KafkaTopicMon gateway-cp-kafka:9092 planes3
+          - |
+            cd /opt/rttest
+            java -cp target/rttest.jar com.esri.rttest.mon.KafkaTopicMon gateway-cp-kafka:9092 planes3
         imagePullPolicy: Always
       #nodeSelector:
       #  func: test

@@ -41,8 +41,9 @@ spec:
         command:
           - sh
           - -c
-          - cd /opt/rttest
-          - java -cp target/rttest.jar com.esri.rttest.mon.ElasticIndexMon http://datastore-elasticsearch-client:9200/planes 70
+          - |
+            cd /opt/rttest
+            java -cp target/rttest.jar com.esri.rttest.mon.ElasticIndexMon http://datastore-elasticsearch-client:9200/planes 70
         imagePullPolicy: Always
       #nodeSelector:
       #  func: test

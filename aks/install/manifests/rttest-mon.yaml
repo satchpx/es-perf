@@ -6,7 +6,6 @@ metadata:
   labels:
     app: rttest-mon
 spec:
-  ports:
   clusterIP: None
   selector:
     app: rttest-mon
