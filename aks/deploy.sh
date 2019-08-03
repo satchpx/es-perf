@@ -60,6 +60,8 @@ if [[ (${DISK_SKU} != "Standard_LRS") && (${DISK_SKU} != "StandardSSD_LRS") && (
     exit 1
 fi
 
+source ./.creds.env
+
 # @TODO: make login non-interactive
 az login
 az group create --name ${RG_NAME} --location ${REGION}
@@ -86,11 +88,6 @@ az network vnet subnet create \
     --address-prefixes 10.241.0.0/16
 
 echo "Assign Role"
-
-APPID='e992b27b-740f-4c11-a458-4a73c4425c58'
-TENANTID='ca9700ce-d438-4389-b86f-09c48f71d0ce'
-OBJECTID='1be235b6-4571-4372-8516-248c77d7df29'
-APPPW='TtH*K-VFOdH/+DCFQTQzXu3rwIuZ7M90'
 
 VNET=$(az network vnet show --resource-group ${RG_NAME} --name ${RG_NAME} --query id -o tsv)
 az role assignment create --assignee ${APPID} --scope ${VNET} --role Contributor
