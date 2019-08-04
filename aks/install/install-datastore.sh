@@ -9,7 +9,7 @@ PX=$1
 KC=$2
 
 if [ -z ${KC} ]; then
-    KC='~/.kube/config'
+    KC='/root/.kube/config'
 fi
 
 if [ $1 == "yes" ]; then

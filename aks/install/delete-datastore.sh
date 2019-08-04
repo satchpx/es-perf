@@ -3,7 +3,7 @@
 KC=$1
 
 if [ -z ${KC} ]; then
-    KC='~/.kube/config'
+    KC='/root/.kube/config'
 fi
 
 # Delete master
