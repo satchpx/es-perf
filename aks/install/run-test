@@ -42,7 +42,7 @@ if [ $OP == "start" ]; then
 
     sleep 30
     echo "[INFO]: Test started..."
-    echo "[INFO]: Follow logs of rttest-ktm and rttest-eim fot progress/ results!"
+    echo "[INFO]: Follow logs of rttest-ktm and rttest-eim for progress/ results!"
 else
     kubectl --kubeconfig=${KC} delete -f manifests/rttest-send-kafka-25k-5m.yaml
     kubectl --kubeconfig=${KC} delete -f manifests/sparkop-es-2.4.1.yaml
