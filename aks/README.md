@@ -1,5 +1,26 @@
 # Elasticsearch-px test on AKS
 
+## Pre-requisites
+1. Azure account
+2. Azure application https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app
+3. Register application with Azure AD https://docs.microsoft.com/en-us/rest/api/azure/#register-your-client-application-with-azure-ad
+4. Note down the `Application ID`, `Tenant ID`, `Object ID` and `Application password`. This will be used in later steps
+
+## Before you begin
+```
+git clone https://github.com/satchpx/es-perf
+cd es-perf/aks/install
+touch .creds.env
+```
+
+Add the following key-value pairs in `.creds.env`
+```
+APPID='<Azure application ID>'
+TENANTID='<Tenant ID>'
+OBJECTID='<Object ID>'
+APPPW='<Application password>'
+```
+
 ## Deploy AKS cluster
 
 ```
