@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+
+printUsage() {
+  cat <<EOUSAGE
+Usage:
+  $0 
+    -n <name of the eks cluster>
+    -r <region>
+EOUSAGE
+  echo "Example: eksdestroy -n mycluster -r us-east-2"
+}
+
+while getopts "h?:n:r:" opt; do
+    case "$opt" in
+    h|\?)
+        printUsage
+        exit 0
+        ;;
+    n)  NAME=$OPTARG
+        ;;
+    r)  REGION=$OPTARG
+        ;;
+    :)
+        echo "[ERROR] Option -$OPTARG requires an argument." >&2
+        exit 1
+        ;;
+    default)
+       printUsage
+       exit 1
+    esac
+done
+
+if [[ (-z ${NAME}) || (-z ${REGION}) ]]; then
+    echo "[ERROR]: Required arguments missing"
+    printUsage
+    exit 1
+fi
+
+source .creds.env
+
+eksctl delete cluster \
+--name ${NAME} \
+--region ${REGION} 
+
+exit $?

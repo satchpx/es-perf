@@ -1,0 +1,105 @@
+#!/usr/bin/env bash
+
+
+printUsage() {
+  cat <<EOUSAGE
+Usage:
+  $0 
+    -n <name of the eks cluster>
+    -r <region> [Optional, Default=us-east-2]
+    -v <Kubernetes version> [Optional, Default=latest]
+    -t <Node type> [Optional, Default=t2.xlarge]
+    -g <Node group name> [Optional, Default=standard-workers]
+    -c <node count>
+    -i <AMI> [Optional, Default=auto]
+    -k <ssh public key>
+    -m <node min count> [Optional, Default=node_count]
+    -x <node max count> [Optional, Default=node_count]
+EOUSAGE
+  echo "Example: eksdeploy -n mycluster -c 3 -k /path/to/my/keyfile"
+}
+
+# Initialize defaults
+REGION='us-east-2'
+NODE_TYPE='t2.xlarge'
+NODEGROUP_NAME='standard-workers'
+AMI='auto'
+
+while getopts "h?:n:r:v:t:g:c:i:k:" opt; do
+    case "$opt" in
+    h|\?)
+        printUsage
+        exit 0
+        ;;
+    n)  NAME=$OPTARG
+        ;;
+    r)  REGION=$OPTARG
+        ;;
+    v)  KUBE_VERSION=$OPTARG
+        ;;
+    t)  NODE_TYPE=$OPTARG
+        ;;
+    g)  NODEGROUP_NAME=$OPTARG
+        ;;
+    c)  NODE_COUNT=$OPTARG
+        ;;
+    i)  AMI=$OPTARG
+        ;;
+    k)  KEY=$OPTARG
+        ;;
+    m)  NODE_COUNT_MIN=$OPTARG
+        ;;
+    x)  NODE_COUNT_MAX=$OPTARG
+        ;;
+    :)
+        echo "[ERROR] Option -$OPTARG requires an argument." >&2
+        exit 1
+        ;;
+    default)
+       printUsage
+       exit 1
+    esac
+done
+
+if [[ (-z ${NAME}) || (-z ${NODE_COUNT}) || (-z ${KEY}) ]]; then
+    echo "[ERROR]: Required arguments missing"
+    printUsage
+    exit 1
+fi
+
+if [[ (-z ${NODE_COUNT_MAX}) || (-z ${NODE_COUNT_MIN}) ]]; then
+    echo "[WARN]: Did not get a min/max node count. Setting it to node count"
+    NODE_COUNT_MAX=${NODE_COUNT}
+    NODE_COUNT_MIN=${NODE_COUNT}
+fi
+
+source .creds.env
+
+cmd='eksctl create cluster \
+--name ${NAME} \
+--region ${REGION} \
+--version ${KUBE_VERSION} \
+--nodegroup-name ${NODEGROUP_NAME} \
+--node-type ${NODE_TYPE} \
+--nodes ${NODE_COUNT} \
+--nodes-min ${NODE_COUNT_MAX} \
+--nodes-max ${NODE_COUNT_MIN} \
+--node-ami ${AMI} \
+--ssh-public-key ${KEY}'
+
+if [ ! -z ${KUBE_VERSION} ]; then
+cmd='eksctl create cluster \
+--name ${NAME} \
+--region ${REGION} \
+--version ${KUBE_VERSION} \
+--nodegroup-name ${NODEGROUP_NAME} \
+--node-type ${NODE_TYPE} \
+--nodes ${NODE_COUNT} \
+--nodes-min ${NODE_COUNT_MAX} \
+--nodes-max ${NODE_COUNT_MIN} \
+--node-ami ${AMI} \
+--ssh-public-key ${KEY}'
+fi
+
+eval ${cmd}
+exit $?
