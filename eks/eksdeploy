@@ -16,7 +16,7 @@ Usage:
     -m <node min count> [Optional, Default=node_count]
     -x <node max count> [Optional, Default=node_count]
 EOUSAGE
-  echo "Example: eksdeploy -n mycluster -c 3 -k /path/to/my/keyfile"
+  echo "Example: eksdeploy -n mycluster -c 3 -k keyfile"
 }
 
 # Initialize defaults
@@ -75,20 +75,19 @@ fi
 
 source .creds.env
 
-cmd='eksctl create cluster \
+cmd="eksctl create cluster \
 --name ${NAME} \
 --region ${REGION} \
---version ${KUBE_VERSION} \
 --nodegroup-name ${NODEGROUP_NAME} \
 --node-type ${NODE_TYPE} \
 --nodes ${NODE_COUNT} \
 --nodes-min ${NODE_COUNT_MAX} \
 --nodes-max ${NODE_COUNT_MIN} \
 --node-ami ${AMI} \
---ssh-public-key ${KEY}'
+--ssh-public-key ${KEY}"
 
 if [ ! -z ${KUBE_VERSION} ]; then
-cmd='eksctl create cluster \
+cmd="eksctl create cluster \
 --name ${NAME} \
 --region ${REGION} \
 --version ${KUBE_VERSION} \
@@ -98,8 +97,9 @@ cmd='eksctl create cluster \
 --nodes-min ${NODE_COUNT_MAX} \
 --nodes-max ${NODE_COUNT_MIN} \
 --node-ami ${AMI} \
---ssh-public-key ${KEY}'
+--ssh-public-key ${KEY}"
 fi
 
+echo $cmd
 eval ${cmd}
 exit $?
