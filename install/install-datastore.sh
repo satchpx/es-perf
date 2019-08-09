@@ -5,6 +5,7 @@ printUsage() {
 Usage:
   $0 
     -s <storage provider> [px|mp|gp2]
+    -r <replication factor> [1|2]
     -k <kubeconfig file> [Optional]
 EOUSAGE
   echo "Example: install-datastore.sh px"
@@ -17,6 +18,8 @@ while getopts "h?:s:" opt; do
         exit 0
         ;;
     s)  STORAGE_PROVIDER=$OPTARG
+        ;;
+    R)  RF=$OPTARG
         ;;
     k)  KC=$OPTARG
         ;;
@@ -36,6 +39,12 @@ if [[ (-z ${STORAGE_PROVIDER}) ]]; then
     exit 1
 fi
 
+if [[ (${STORAGE_PROVIDER} == "px") && (-z ${RF}) ]]; then
+    echo "[ERROR]: Need a replication specification when using px"
+    printUsage
+    exit 1
+fi
+
 if [[ (${STORAGE_PROVIDER} != "px") && (${STORAGE_PROVIDER} != "mp") && (${STORAGE_PROVIDER} != "gp2") ]]; then
     echo "[ERROR]: Invalid argument/ value"
     printUsage
@@ -49,10 +58,17 @@ fi
 if [ ${STORAGE_PROVIDER} == "px" ]; then
     # Create the storageClassses
     kubectl --kubeconfig=${KC} apply -f manifests/portworx-storageclasses.yaml
-    # Install master
-    helm install --name datastore-elasticsearch-master --values manifests/es-master-values-px-rf2.yaml helm-charts/elastic/elasticsearch
-    # Install client
-    helm install --name datastore-elasticsearch-client --values manifests/es-client-values-px-rf2.yaml helm-charts/elastic/elasticsearch
+    if [ ${RF} -eq 2 ]; then
+        # Install master
+        helm install --name datastore-elasticsearch-master --values manifests/es-master-values-px-rf2.yaml helm-charts/elastic/elasticsearch
+        # Install client
+        helm install --name datastore-elasticsearch-client --values manifests/es-client-values-px-rf2.yaml helm-charts/elastic/elasticsearch
+    else
+        # Install master
+        helm install --name datastore-elasticsearch-master --values manifests/es-master-values-px-rf1.yaml helm-charts/elastic/elasticsearch
+        # Install client
+        helm install --name datastore-elasticsearch-client --values manifests/es-client-values-px-rf1.yaml helm-charts/elastic/elasticsearch
+    fi
 elif [ ${STORAGE_PROVIDER} == "mp" ]; then
     # Install master
     helm install --name datastore-elasticsearch-master --values manifests/es-master-values-nopx.yaml helm-charts/elastic/elasticsearch
