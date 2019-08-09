@@ -71,12 +71,12 @@ if [ ${STORAGE_PROVIDER} == "px" ]; then
     fi
 elif [ ${STORAGE_PROVIDER} == "mp" ]; then
     # Install master
-    helm install --name datastore-elasticsearch-master --values manifests/es-master-values-nopx.yaml helm-charts/elastic/elasticsearch
+    helm install --name datastore-elasticsearch-master --values manifests/es-master-values-mp.yaml helm-charts/elastic/elasticsearch
     # Install client
-    helm install --name datastore-elasticsearch-client --values manifests/es-client-values-nopx.yaml helm-charts/elastic/elasticsearch
+    helm install --name datastore-elasticsearch-client --values manifests/es-client-values-mp.yaml helm-charts/elastic/elasticsearch
 elif [ ${STORAGE_PROVIDER} == "gp2" ]; then
     # Install master
-    helm install --name datastore-elasticsearch-master --values manifests/es-master-values-nopx.yaml helm-charts/elastic/elasticsearch
+    helm install --name datastore-elasticsearch-master --values manifests/es-master-values-gp2.yaml helm-charts/elastic/elasticsearch
     # Install client
-    helm install --name datastore-elasticsearch-client --values manifests/es-client-values-nopx.yaml helm-charts/elastic/elasticsearch
+    helm install --name datastore-elasticsearch-client --values manifests/es-client-values-gp2.yaml helm-charts/elastic/elasticsearch
 fi
