@@ -38,7 +38,8 @@ if [ $OP == "start" ]; then
     kubectl --kubeconfig=${KC} apply -f manifests/rttest-eim.yaml
     
     # Deploy the send job
-    kubectl --kubeconfig=${KC} apply -f manifests/rttest-send-kafka-25k-5m.yaml
+    #kubectl --kubeconfig=${KC} apply -f manifests/rttest-send-kafka-25k-5m.yaml
+    kubectl --kubeconfig=${KC} apply -f manifests/rttest-send-kafka-100k-50m.yaml
 
     sleep 30
     echo "[INFO]: Test started..."
