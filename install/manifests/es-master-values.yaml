@@ -14,7 +14,7 @@ roles:
 
 replicas: 3
 
-image: "hanoch/elasticsearch"
+image: "satchpx/elasticsearch"
 imageTag: "7.0.0"
 imagePullPolicy: "Always"
 #imagePullPolicy: "IfNotPresent"

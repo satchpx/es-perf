@@ -60,7 +60,7 @@ if [[ (${DISK_SKU} != "Standard_LRS") && (${DISK_SKU} != "StandardSSD_LRS") && (
     exit 1
 fi
 
-source ./.creds.env
+source .creds.env
 
 # @TODO: make login non-interactive
 az login

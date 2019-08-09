@@ -12,7 +12,7 @@ roles:
   ingest: "true"
   data: "true"
 
-replicas: 2
+replicas: 3
 
 image: "satchpx/elasticsearch"
 imageTag: "7.0.0"
@@ -37,11 +37,10 @@ initResources: {}
   #   cpu: "25m"
   #   memory: "128Mi"
 
-schedulerName: "stork"
-
 volumeClaimTemplate:
   accessModes: [ "ReadWriteOnce" ]
-  storageClassName: "px-db-rf1-es-data-sc"
+  #storageClassName: "default"
+  storageClassName: "managed-premium"
   resources:
     requests:
       storage: 1Ti
