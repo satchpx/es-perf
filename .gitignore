@@ -1,2 +1,10 @@
 aks/.creds.env
 eks/.creds.env
+install/manifests/rttest-send-kafka-25k-10m-10part.yaml
+install/manifests/rttest-send-kafka-25k-10m-7part.yaml
+install/manifests/rttest-send-kafka-25k-5m-10part.yaml
+install/manifests/rttest-send-kafka-25k-5m-5part.yaml
+install/manifests/rttest-send-kafka-25k-5m-7part.yaml
+install/manifests/rttest-send-kafka-50k-10m-10part.yaml
+install/manifests/rttest-send-kafka-50k-20m-10part.yaml
+install/manifests/rttest-send-kafka-50k-5m-10part.yaml
