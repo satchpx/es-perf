@@ -50,9 +50,9 @@ if [ ${STORAGE_PROVIDER} == "px" ]; then
     # Create the storageClassses
     kubectl --kubeconfig=${KC} apply -f manifests/portworx-storageclasses.yaml
     # Install master
-    helm install --name datastore-elasticsearch-master --values manifests/es-master-values-px-rf1.yaml helm-charts/elastic/elasticsearch
+    helm install --name datastore-elasticsearch-master --values manifests/es-master-values-px-rf2.yaml helm-charts/elastic/elasticsearch
     # Install client
-    helm install --name datastore-elasticsearch-client --values manifests/es-client-values-px-rf1.yaml helm-charts/elastic/elasticsearch
+    helm install --name datastore-elasticsearch-client --values manifests/es-client-values-px-rf2.yaml helm-charts/elastic/elasticsearch
 elif [ ${STORAGE_PROVIDER} == "mp" ]; then
     # Install master
     helm install --name datastore-elasticsearch-master --values manifests/es-master-values-nopx.yaml helm-charts/elastic/elasticsearch
