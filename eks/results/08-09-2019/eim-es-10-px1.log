@@ -1,0 +1,492 @@
+Index may not exist
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565450144144 |       0 |        8,832,275 |                  |                  |                  |
+|          2 |           2 |1565450214112 |      69 |       21,140,243 |          175,909 |          175,909 |          175,909 |
+|          3 |           3 |1565450284272 |     140 |       33,575,984 |          176,580 |          177,248 |          176,579 |
+|          4 |           4 |1565450354110 |     209 |       40,000,000 |          151,343 |           91,985 |          148,442 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 279|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  176,580 | Linear Regression Standard Error: 0.39 | Average Rate: 176,579
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565451054122 |       0 |       10,539,760 |                  |                  |                  |
+|          2 |           2 |1565451124112 |      69 |       23,068,286 |          179,005 |          179,005 |          179,005 |
+|          3 |           3 |1565451194112 |     139 |       35,179,919 |          176,014 |          173,023 |          176,014 |
+|          4 |           4 |1565451264112 |     209 |       40,000,000 |          143,566 |           68,858 |          140,294 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 280|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  176,014 | Linear Regression Standard Error: 1.73 | Average Rate: 176,014
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565451964111 |       0 |       10,750,000 |                  |                  |                  |
+|          2 |           2 |1565452034112 |      70 |       35,379,479 |          351,845 |          351,845 |          351,845 |
+|          3 |           3 |1565452104110 |     139 |       40,000,000 |          208,931 |           66,009 |          208,930 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 209|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  351,845 | Average Rate: 351,845
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565452804112 |       0 |       10,643,941 |                  |                  |                  |
+|          2 |           2 |1565452874146 |      70 |       23,065,894 |          177,370 |          177,370 |          177,370 |
+|          3 |           3 |1565452944112 |     140 |       35,310,643 |          176,191 |          175,010 |          176,191 |
+|          4 |           4 |1565453014112 |     210 |       40,000,000 |          143,312 |           66,991 |          139,791 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 280|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  176,191 | Linear Regression Standard Error: 0.68 | Average Rate: 176,191
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565453714116 |       0 |       10,848,693 |                  |                  |                  |
+|          2 |           2 |1565453784132 |      70 |       23,011,076 |          173,709 |          173,709 |          173,709 |
+|          3 |           3 |1565453854114 |     139 |       40,000,000 |          208,224 |          242,761 |          208,227 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 209|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  173,709 | Average Rate: 173,709
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565454554115 |       0 |       10,585,132 |                  |                  |                  |
+|          2 |           2 |1565454624115 |      70 |       22,940,706 |          176,508 |          176,508 |          176,508 |
+|          3 |           3 |1565454694115 |     140 |       35,320,929 |          176,684 |          176,860 |          176,684 |
+|          4 |           4 |1565454764115 |     210 |       40,000,000 |          143,750 |           66,844 |          140,071 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 280|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  176,684 | Linear Regression Standard Error: 0.10 | Average Rate: 176,684
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565455464117 |       0 |       10,625,168 |                  |                  |                  |
+|          2 |           2 |1565455534117 |      70 |       22,968,662 |          176,336 |          176,336 |          176,336 |
+|          3 |           3 |1565455604117 |     140 |       36,645,778 |          185,862 |          195,387 |          185,862 |
+|          4 |           4 |1565455674118 |     210 |       40,000,000 |          145,430 |           47,917 |          139,879 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 280|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  185,862 | Linear Regression Standard Error: 5.50 | Average Rate: 185,862
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565456304121 |       0 |       10,486,308 |                  |                  |                  |
+|          2 |           2 |1565456374119 |      69 |       22,707,619 |          174,595 |          174,595 |          174,595 |
+|          3 |           3 |1565456444129 |     140 |       35,088,160 |          175,718 |          176,840 |          175,717 |
+|          4 |           4 |1565456514119 |     209 |       40,000,000 |          144,174 |           70,179 |          140,543 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 279|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  175,718 | Linear Regression Standard Error: 0.65 | Average Rate: 175,717
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565457214149 |       0 |       10,750,000 |                  |                  |                  |
+|          2 |           2 |1565457284120 |      69 |       23,052,391 |          175,821 |          175,821 |          175,821 |
+|          3 |           3 |1565457354118 |     139 |       35,216,225 |          174,797 |          173,774 |          174,797 |
+|          4 |           4 |1565457424118 |     209 |       40,000,000 |          142,752 |           68,340 |          139,306 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 279|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  174,797 | Linear Regression Standard Error: 0.59 | Average Rate: 174,797
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565458124121 |       0 |       23,074,372 |                  |                  |                  |
+|          2 |           2 |1565458194133 |      70 |       35,146,724 |          172,433 |          172,433 |          172,433 |
+|          3 |           3 |1565458264120 |     139 |       40,000,000 |          120,901 |           69,345 |          120,898 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 209|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  172,433 | Average Rate: 172,433
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565458964122 |       0 |       10,571,097 |                  |                  |                  |
+|          2 |           2 |1565459034123 |      70 |       22,997,649 |          177,520 |          177,520 |          177,520 |
+|          3 |           3 |1565459104126 |     140 |       34,526,964 |          171,108 |          164,697 |          171,108 |
+|          4 |           4 |1565459174121 |     209 |       40,000,000 |          142,595 |           78,192 |          140,138 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 279|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  171,108 | Linear Regression Standard Error: 3.70 | Average Rate: 171,108
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565459874137 |       0 |       10,650,370 |                  |                  |                  |
+|          2 |           2 |1565459944123 |      69 |       35,445,834 |          354,292 |          354,292 |          354,292 |
+|          3 |           3 |1565460014122 |     139 |       40,000,000 |          209,658 |           65,060 |          209,663 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 209|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  354,292 | Average Rate: 354,292
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565460714125 |       0 |       10,488,941 |                  |                  |                  |
+|          2 |           2 |1565460784123 |      69 |       22,853,799 |          176,646 |          176,646 |          176,646 |
+|          3 |           3 |1565460854124 |     139 |       34,590,833 |          172,158 |          167,670 |          172,158 |
+|          4 |           4 |1565460924125 |     210 |       40,000,000 |          143,243 |           77,273 |          140,529 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 279|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  172,158 | Linear Regression Standard Error: 2.59 | Average Rate: 172,158
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565461624124 |       0 |       10,696,979 |                  |                  |                  |
+|          2 |           2 |1565461694270 |      70 |       23,086,818 |          176,629 |          176,629 |          176,629 |
+|          3 |           3 |1565461764124 |     140 |       40,000,000 |          209,285 |          242,122 |          209,307 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 210|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  176,629 | Average Rate: 176,629
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565462464125 |       0 |       10,525,000 |                  |                  |                  |
+|          2 |           2 |1565462534125 |      70 |       22,991,389 |          178,091 |          178,091 |          178,091 |
+|          3 |           3 |1565462604125 |     140 |       35,085,892 |          175,435 |          172,779 |          175,435 |
+|          4 |           4 |1565462674126 |     210 |       40,000,000 |          143,599 |           70,201 |          140,356 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 280|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  175,435 | Linear Regression Standard Error: 1.53 | Average Rate: 175,435
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565463374127 |       0 |       10,574,693 |                  |                  |                  |
+|          2 |           2 |1565463444129 |      70 |       22,965,136 |          177,001 |          177,001 |          177,001 |
+|          3 |           3 |1565463514127 |     140 |       34,994,906 |          174,430 |          171,859 |          174,430 |
+|          4 |           4 |1565463584125 |     209 |       40,000,000 |          143,296 |           71,503 |          140,122 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 279|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  174,430 | Linear Regression Standard Error: 1.48 | Average Rate: 174,430
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565464284128 |       0 |       23,060,851 |                  |                  |                  |
+|          2 |           2 |1565464354126 |      69 |       35,110,126 |          172,137 |          172,137 |          172,137 |
+|          3 |           3 |1565464424126 |     139 |       40,000,000 |          120,995 |           69,855 |          120,996 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 209|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  172,137 | Average Rate: 172,137
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Index may not exist
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565465124127 |       0 |       10,632,882 |                  |                  |                  |
+|          2 |           2 |1565465194129 |      70 |       23,071,227 |          177,686 |          177,686 |          177,686 |
+|          3 |           3 |1565465264125 |     139 |       35,148,911 |          175,117 |          172,548 |          175,117 |
+|          4 |           4 |1565465334126 |     209 |       40,000,000 |          143,114 |           69,300 |          139,844 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 280|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  175,117 | Linear Regression Standard Error: 1.48 | Average Rate: 175,117
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565466034139 |       0 |       10,680,393 |                  |                  |                  |
+|          2 |           2 |1565466104133 |      69 |       35,145,144 |          349,526 |          349,526 |          349,526 |
+|          3 |           3 |1565466174127 |     139 |       40,000,000 |          209,444 |           69,361 |          209,444 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 209|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  349,526 | Average Rate: 349,526
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565466874128 |       0 |       10,575,000 |                  |                  |                  |
+|          2 |           2 |1565466944128 |      70 |       22,395,983 |          168,871 |          168,871 |          168,871 |
+|          3 |           3 |1565467014128 |     140 |       35,414,903 |          177,428 |          185,985 |          177,428 |
+|          4 |           4 |1565467084130 |     210 |       40,000,000 |          144,704 |           65,500 |          140,118 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 280|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  177,428 | Linear Regression Standard Error: 4.94 | Average Rate: 177,428
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565467784133 |       0 |       10,554,998 |                  |                  |                  |
+|          2 |           2 |1565467854172 |      70 |       22,935,953 |          176,772 |          176,772 |          176,772 |
+|          3 |           3 |1565467924133 |     140 |       40,000,000 |          210,315 |          243,908 |          210,321 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 209|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  176,772 | Average Rate: 176,772
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565468624132 |       0 |       10,575,000 |                  |                  |                  |
+|          2 |           2 |1565468694166 |      70 |       22,977,255 |          177,089 |          177,089 |          177,089 |
+|          3 |           3 |1565468764134 |     140 |       35,256,552 |          176,294 |          175,499 |          176,294 |
+|          4 |           4 |1565468834135 |     210 |       40,000,000 |          143,655 |           67,763 |          140,117 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 280|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  176,294 | Linear Regression Standard Error: 0.46 | Average Rate: 176,294
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565469534153 |       0 |       10,675,000 |                  |                  |                  |
+|          2 |           2 |1565469604139 |      69 |       22,943,765 |          175,303 |          175,303 |          175,303 |
+|          3 |           3 |1565469674137 |     139 |       35,300,408 |          175,916 |          176,529 |          175,916 |
+|          4 |           4 |1565469744134 |     209 |       40,000,000 |          143,342 |           67,140 |          139,655 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 279|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  175,916 | Linear Regression Standard Error: 0.35 | Average Rate: 175,916
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565470444135 |       0 |       23,065,239 |                  |                  |                  |
+|          2 |           2 |1565470514137 |      70 |       35,116,280 |          172,153 |          172,153 |          172,153 |
+|          3 |           3 |1565470584135 |     140 |       40,000,000 |          120,963 |           69,769 |          120,963 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 209|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  172,153 | Average Rate: 172,153
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+Count decreased...
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565471284162 |       0 |       10,704,637 |                  |                  |                  |
+|          2 |           2 |1565471354137 |      69 |       23,151,244 |          177,872 |          177,872 |          177,872 |
+|          3 |           3 |1565471424136 |     139 |       35,084,592 |          174,175 |          170,479 |          174,175 |
+|          4 |           4 |1565471494136 |     209 |       40,000,000 |          142,614 |           70,220 |          139,519 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 279|40000000
+Total Count: 40,000,000 | Linear Regression Rate:  174,175 | Linear Regression Standard Error: 2.13 | Average Rate: 174,175
+
+Start Count: 40000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
