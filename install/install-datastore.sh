@@ -11,7 +11,7 @@ EOUSAGE
   echo "Example: install-datastore.sh px"
 }
 
-while getopts "h?:s:" opt; do
+while getopts "h?:s:r:" opt; do
     case "$opt" in
     h|\?)
         printUsage
@@ -19,7 +19,7 @@ while getopts "h?:s:" opt; do
         ;;
     s)  STORAGE_PROVIDER=$OPTARG
         ;;
-    R)  RF=$OPTARG
+    r)  RF=$OPTARG
         ;;
     k)  KC=$OPTARG
         ;;
