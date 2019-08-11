@@ -54,12 +54,12 @@ cp-kafka:
   resources: {}
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
   ## and remove the curly braces after 'resources:'
-  #  limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  #  requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+  limits:
+    cpu: 14
+    memory: 50Gi
+  requests:
+    cpu: 14
+    memory: 50Gi
 
 ## ------------------------------------------------------
 ## Schema Registry
