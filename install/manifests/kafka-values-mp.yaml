@@ -51,15 +51,15 @@ cp-kafka:
     storageClass: "managed-premium"
     size: 1Ti
     disksPerBroker: 1
-  resources: {}
+  resources:
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
   ## and remove the curly braces after 'resources:'
-  limits:
-    cpu: 14
-    memory: 50Gi
-  requests:
-    cpu: 14
-    memory: 50Gi
+    limits:
+      cpu: 14
+      memory: 50Gi
+    requests:
+      cpu: 14
+      memory: 50Gi
 
 ## ------------------------------------------------------
 ## Schema Registry

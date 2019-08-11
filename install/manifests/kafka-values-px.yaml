@@ -23,15 +23,15 @@ cp-zookeeper:
     ## Size for data log dir, which is a dedicated log device to be used, and helps avoid competition between logging and snaphots.
     dataLogDirSize: 5Gi
     dataLogDirStorageClass: "default"
-  resources: {}
+  resources:
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
   ## and remove the curly braces after 'resources:'
-  limits:
-    cpu: 14
-    memory: 50Gi
-  requests:
-    cpu: 14
-    memory: 50Gi
+    limits:
+      cpu: 14
+      memory: 50Gi
+    requests:
+      cpu: 14
+      memory: 50Gi
 
 ## ------------------------------------------------------
 ## Kafka
