@@ -23,15 +23,16 @@ cp-zookeeper:
     ## Size for data log dir, which is a dedicated log device to be used, and helps avoid competition between logging and snaphots.
     dataLogDirSize: 5Gi
     dataLogDirStorageClass: "px-db-rf1-sc"
-  resources:
+  resources: {}
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
   ## and remove the curly braces after 'resources:'
-    limits:
-      cpu: 14
-      memory: 50Gi
-    requests:
-      cpu: 14
-      memory: 50Gi
+  #  limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  #  requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+  schedulerName: stork
 
 ## ------------------------------------------------------
 ## Kafka
@@ -51,15 +52,16 @@ cp-kafka:
     storageClass: "px-db-rf1-sc"
     size: 1Ti
     disksPerBroker: 1
-  resources: {}
+  resources:
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
   ## and remove the curly braces after 'resources:'
-  #  limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  #  requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+    limits:
+      cpu: 14
+      memory: 50Gi
+    requests:
+      cpu: 14
+      memory: 50Gi
+  schedulerName: stork
 
 ## ------------------------------------------------------
 ## Schema Registry
