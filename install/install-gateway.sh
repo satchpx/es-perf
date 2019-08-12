@@ -33,7 +33,7 @@ done
 ### Deploy gateway (kafka)
 if [ ${STORAGE_PROVIDER} == "gp2" ]; then
     helm  upgrade --wait --timeout=600 --install --values manifests/kafka-values-gp2.yaml gateway helm-charts/confluent
-elif [${STORAGE_PROVIDER} == "mp" ]; then
+elif [ ${STORAGE_PROVIDER} == "mp" ]; then
     helm  upgrade --wait --timeout=600 --install --values manifests/kafka-values-mp.yaml gateway helm-charts/confluent
 elif [ ${STORAGE_PROVIDER} == "px" ]; then
     if [ ${RF} -eq 1 ]; then
