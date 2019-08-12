@@ -1,32 +1,91 @@
 #!/usr/bin/env bash
 
 printUsage() {
-    echo "Usage: $0 [start|stop]"
+    echo "Usage: $0 "
+      -p <number of kafka partitions>
+      -o <Operation> [start|stop]
+      -k <kubeconfig> [Optional, Default: /root/.kube/config]
     cat <<EOEG
 Example:
-    run-test start # To start the test
-    run-test stop # To stop the test
+    run-test -o start -t planes6 # To start the test
+    run-test -o stop # To stop the test
 EOEG
 }
 
-if [ "$#" -lt 1 ]; then
+while getopts "h?:o:p:k:" opt; do
+    case "$opt" in
+    h|\?)
+        printUsage
+        exit 0
+        ;;
+    o)  OP=$OPTARG
+        ;;
+    p)  PARTN=$OPTARG
+        ;;
+    k)  KC=$OPTARG
+        ;;
+    :)
+        echo "[ERROR] Option -$OPTARG requires an argument." >&2
+        exit 1
+        ;;
+    default)
+       printUsage
+       exit 1
+    esac
+done
+
+if [[ (-z ${OP}) ]]; then
+    echo "[ERROR]: Required arguments missing"
     printUsage
     exit 1
 fi
-
-OP=$1
 
 if [[ ( $OP != "start" ) && ( $OP != "stop" ) ]]; then
     printUsage
     exit 1
 fi
 
-KC=$2
 if [ -z ${KC} ]; then
     KC='/root/.kube/config'
 fi
 
+if [ -z ${PARTN} ]; then
+    PARTN=6
+fi
+
+if ! [[ "${PARTN}" =~ ^[0-9]+$ ]]; then
+    echo "[ERROR]: number of partitions needs to be an integer"
+    printUsage
+    exit 1
+fi
+
+topic=planes${PARTN}
 if [ $OP == "start" ]; then
+    # Recreate Kafka Topic
+    # If it exists; delete it
+    cnt=$(kubectl exec gateway-cp-kafka-0 --container cp-kafka-broker -- kafka-topics --zookeeper gateway-cp-zookeeper:2181 --list | grep ${topic} | wc -l )
+
+    if [ "${cnt}" -gt 0 ]; then
+        # If exists; delete the topic
+        kubectl exec gateway-cp-kafka-0 --container cp-kafka-broker -- kafka-topics --zookeeper gateway-cp-zookeeper:2181 --topic ${topic} --delete
+    fi
+
+    # Create Topic
+    kubectl exec gateway-cp-kafka-0 --container cp-kafka-broker -- kafka-topics --zookeeper gateway-cp-zookeeper:2181 --topic ${topic} --create --replication-factor 1 --partitions 10
+
+    if [ "$?" -ne 0 ]; then
+        echo "Create Topic Failed; waiting one minute and try again."
+        sleep 60
+        # Try one more time
+
+        kubectl exec gateway-cp-kafka-0 --container cp-kafka-broker -- kafka-topics --zookeeper gateway-cp-zookeeper:2181 --topic ${topic} --create --replication-factor 1 --partitions 10
+
+        if [ "$?" -ne 0 ]; then
+        echo "Create Topic Failed; this will happen if some process has an open connection to the topic. Make sure you delete all producers/consumers and run script again"
+        exit 1
+        fi
+    fi  
+    
     # Deploy spark application (batch job)
     kubectl --kubeconfig=${KC} apply -f manifests/sparkop-es-2.4.1.yaml
     # @TODO: Add logic to wait for the pods to become ready
