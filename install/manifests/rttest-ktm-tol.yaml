@@ -43,7 +43,7 @@ spec:
           - -c
           - |
             cd /opt/rttest
-            java -cp target/rttest.jar com.esri.rttest.mon.KafkaTopicMon gateway-cp-kafka:9092 planes3
+            java -cp target/rttest.jar com.esri.rttest.mon.KafkaTopicMon gateway-cp-kafka:9092 planes6
         imagePullPolicy: Always
       tolerations:
       - key: "key"
