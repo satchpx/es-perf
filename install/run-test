@@ -87,7 +87,8 @@ if [ $OP == "start" ]; then
     fi  
     
     # Deploy spark application (batch job)
-    kubectl --kubeconfig=${KC} apply -f manifests/sparkop-es-2.4.1.yaml
+    #kubectl --kubeconfig=${KC} apply -f manifests/sparkop-es-2.4.1.yaml
+    kubectl --kubeconfig=${KC} apply -f manifests/sparkop-es-2.4.1-6part.yaml
     # @TODO: Add logic to wait for the pods to become ready
     # For now, just sleep
     sleep 120
@@ -110,5 +111,6 @@ else
     kubectl --kubeconfig=${KC} delete -f manifests/rttest-send-kafka-25k-5m-6part-tol.yaml
     #kubectl --kubeconfig=${KC} delete -f manifests/rttest-send-kafka-25k-5m.yaml
     #kubectl --kubeconfig=${KC} delete -f manifests/rttest-send-kafka-100k-50m.yaml
-    kubectl --kubeconfig=${KC} delete -f manifests/sparkop-es-2.4.1.yaml
+    #kubectl --kubeconfig=${KC} delete -f manifests/sparkop-es-2.4.1.yaml
+    kubectl --kubeconfig=${KC} delete -f manifests/sparkop-es-2.4.1-6part.yaml
 fi
