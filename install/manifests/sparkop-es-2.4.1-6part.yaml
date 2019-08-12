@@ -16,7 +16,7 @@ spec:
     - "9200"
     - "-"
     - "-"
-    - "20"
+    - "9"
     - "true"
     - "false"
     - "true"
@@ -35,7 +35,7 @@ spec:
     serviceAccount: spark
   executor:
     cores: 4
-    instances: 20
+    instances: 9
     javaOptions: -Dlog4j.configurationFile=/opt/spark/work-dir/log4j2conf.xml
     labels:
       version: 2.4.1
