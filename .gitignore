@@ -1,5 +1,6 @@
 aks/.creds.env
 eks/.creds.env
+eks/px-spec.yaml
 install/manifests/rttest-send-kafka-25k-10m-10part.yaml
 install/manifests/rttest-send-kafka-25k-10m-7part.yaml
 install/manifests/rttest-send-kafka-25k-5m-10part.yaml
