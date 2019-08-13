@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 printUsage() {
-    echo "Usage: $0 "
-      -p <number of kafka partitions>
-      -o <Operation> [start|stop]
-      -k <kubeconfig> [Optional, Default: /root/.kube/config]
     cat <<EOEG
+Usage: $0 
+    -p <number of kafka partitions>
+    -o <Operation> [start|stop]
+    -k <kubeconfig> [Optional, Default: /root/.kube/config]
 Example:
     run-test -o start -t planes6 # To start the test
     run-test -o stop # To stop the test
