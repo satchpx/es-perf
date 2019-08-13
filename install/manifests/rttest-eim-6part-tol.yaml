@@ -1,0 +1,53 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rttest-eim
+  labels:
+    app: rttest-eim
+spec:
+  clusterIP: None
+  selector:
+    app: rttest-eim
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: rttest-eim
+spec:
+  serviceName: rttest-eim
+  selector:
+    matchLabels:
+      app: rttest-eim
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: rttest-eim
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: kubernetes.io/role
+                operator: In
+                values:
+                - agent
+            topologyKey: "kubernetes.io/hostname"
+      containers:
+      - name: rttest-eim
+        image: david62243/rttest-mon:20190718
+        command:
+          - sh
+          - -c
+          - |
+            cd /opt/rttest
+            java -cp target/rttest.jar com.esri.rttest.mon.ElasticIndexMon http://datastore-elasticsearch-client:9200/planes 70
+        imagePullPolicy: Always
+      tolerations:
+      - key: "key"
+        operator: "Exists"
+        effect: "NoSchedule"
+      nodeSelector:
+        func: test
