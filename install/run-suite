@@ -12,12 +12,12 @@ for iter in $(seq 1 $COUNT); do
 
     # start the test
     echo "[INFO]: Starting the test..."
-    eval "${DIRNAME}/run-test start"
+    eval "${DIRNAME}/run-test -o start"
     sleep 600
     echo "[INFO]: Completed iteration ${num}"
     
     echo "[INFO]: Begin tear down"
-    eval "${DIRNAME}/run-test stop"
+    eval "${DIRNAME}/run-test -o stop"
     sleep 120
     echo "[INFO]: Tear down complete"
 done
