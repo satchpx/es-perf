@@ -96,7 +96,7 @@ if [ $OP == "start" ]; then
     # Deploy the monitors
 #    kubectl --kubeconfig=${KC} apply -f manifests/rttest-ktm.yaml
 #    kubectl --kubeconfig=${KC} apply -f manifests/rttest-eim.yaml
-    kubectl --kubeconfig=${KC} apply -f manifests/rttest-ktm-tol.yaml
+    kubectl --kubeconfig=${KC} apply -f manifests/rttest-ktm-${PARTN}part-tol.yaml
     kubectl --kubeconfig=${KC} apply -f manifests/rttest-eim-tol.yaml
     
     # Deploy the send job
