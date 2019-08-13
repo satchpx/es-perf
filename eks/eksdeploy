@@ -19,7 +19,7 @@ EOUSAGE
 }
 
 # Initialize defaults
-REGION='us-east-2'
+REGION='us-east-1'
 NODE_TYPE='t2.xlarge'
 NODEGROUP_NAME='standard-workers'
 AMI='auto'
@@ -74,9 +74,14 @@ fi
 
 source .creds.env
 
+if [ ${REGION} == 'us-east-1' ]; then
+    ZONES='us-east-1a,us-east-1b,us-east-1c'
+fi
+
 cmd="eksctl create cluster \
 --name ${NAME} \
 --region ${REGION} \
+--zones ${ZONES} \
 --nodegroup-name ${NODEGROUP_NAME} \
 --node-type ${NODE_TYPE} \
 --nodes ${NODE_COUNT} \
