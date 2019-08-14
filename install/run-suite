@@ -1,9 +1,45 @@
 #!/usr/bin/env bash
 
-COUNT=$1
+printUsage() {
+    cat <<EOEG
+Usage: $0 
+    -p <number of kafka partitions>
+    -c <count> [Optional, Default: 25]
+    -k <kubeconfig> [Optional, Default: /root/.kube/config]
+Example:
+    run-suite -o start -t planes6 # To start the test
+    run-suite -o stop # To stop the test
+EOEG
+}
+
+while getopts "h?:c:p:k:" opt; do
+    case "$opt" in
+    h|\?)
+        printUsage
+        exit 0
+        ;;
+    c)  COUNT=$OPTARG
+        ;;
+    p)  PARTN=$OPTARG
+        ;;
+    k)  KC=$OPTARG
+        ;;
+    :)
+        echo "[ERROR] Option -$OPTARG requires an argument." >&2
+        exit 1
+        ;;
+    default)
+       printUsage
+       exit 1
+    esac
+done
 
 if [ -z ${COUNT} ]; then
     COUNT=25
+fi
+
+if [ -z ${PARTN} ]; then
+    PARTN=10
 fi
 
 DIRNAME=`dirname $0`
@@ -12,7 +48,7 @@ for iter in $(seq 1 $COUNT); do
 
     # start the test
     echo "[INFO]: Starting the test..."
-    eval "${DIRNAME}/run-test -o start"
+    eval "${DIRNAME}/run-test -o start -p ${PARTN}"
     sleep 600
     echo "[INFO]: Completed iteration ${num}"
     
