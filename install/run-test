@@ -77,7 +77,7 @@ if [ $OP == "start" ]; then
         echo "Create Topic Failed; waiting one minute and try again."
         sleep 60
         # Try one more time
-
+        kubectl delete pod rttest-ktm-0
         kubectl exec gateway-cp-kafka-0 --container cp-kafka-broker -- kafka-topics --zookeeper gateway-cp-zookeeper:2181 --topic ${topic} --create --replication-factor 1 --partitions ${PARTN}
 
         if [ "$?" -ne 0 ]; then
