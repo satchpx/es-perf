@@ -51,7 +51,13 @@ for iter in $(seq 1 $COUNT); do
     eval "${DIRNAME}/run-test -o start -p ${PARTN}"
     sleep 780
     echo "[INFO]: Completed iteration ${num}"
-    
+    echo "[Kafka Topic Monitor Logs]"
+    kubectl logs rttest-ktm-0
+    echo "-------------------------------------------------------------------------"
+    echo "[Elasticsearch Index Monitor Logs]"
+    kubectl logs rttest-eim-0
+    echo "-------------------------------------------------------------------------"
+
     echo "[INFO]: Begin tear down"
     eval "${DIRNAME}/run-test -o stop -p ${PARTN}"
     sleep 120

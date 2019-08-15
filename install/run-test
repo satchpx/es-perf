@@ -61,6 +61,9 @@ fi
 
 topic=planes${PARTN}
 if [ $OP == "start" ]; then
+    kubectl --kubeconfig=${KC} delete -f manifests/rttest-ktm-${PARTN}part-tol.yaml
+    kubectl --kubeconfig=${KC} delete -f manifests/rttest-eim-${PARTN}part-tol.yaml
+
     # Recreate Kafka Topic
     # If it exists; delete it
     cnt=$(kubectl exec gateway-cp-kafka-0 --container cp-kafka-broker -- kafka-topics --zookeeper gateway-cp-zookeeper:2181 --list | grep ${topic} | wc -l )
@@ -116,4 +119,5 @@ else
     #kubectl --kubeconfig=${KC} delete -f manifests/sparkop-es-2.4.1.yaml
     kubectl --kubeconfig=${KC} delete -f manifests/sparkop-es-2.4.1-${PARTN}part.yaml
     kubectl --kubeconfig=${KC} delete -f manifests/rttest-ktm-${PARTN}part-tol.yaml
+    kubectl --kubeconfig=${KC} delete -f manifests/rttest-eim-${PARTN}part-tol.yaml
 fi
