@@ -49,7 +49,7 @@ for iter in $(seq 1 $COUNT); do
     # start the test
     echo "[INFO]: Starting the test..."
     eval "${DIRNAME}/run-test -o start -p ${PARTN}"
-    sleep 600
+    sleep 780
     echo "[INFO]: Completed iteration ${num}"
     
     echo "[INFO]: Begin tear down"

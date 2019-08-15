@@ -91,7 +91,7 @@ if [ $OP == "start" ]; then
     kubectl --kubeconfig=${KC} apply -f manifests/sparkop-es-2.4.1-${PARTN}part.yaml
     # @TODO: Add logic to wait for the pods to become ready
     # For now, just sleep
-    sleep 120
+    sleep 60
 
     # Deploy the monitors
 #    kubectl --kubeconfig=${KC} apply -f manifests/rttest-ktm.yaml
