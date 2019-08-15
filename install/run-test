@@ -115,4 +115,5 @@ else
     #kubectl --kubeconfig=${KC} delete -f manifests/rttest-send-kafka-100k-50m.yaml
     #kubectl --kubeconfig=${KC} delete -f manifests/sparkop-es-2.4.1.yaml
     kubectl --kubeconfig=${KC} delete -f manifests/sparkop-es-2.4.1-${PARTN}part.yaml
+    kubectl --kubeconfig=${KC} delete -f manifests/rttest-ktm-${PARTN}part-tol.yaml
 fi
