@@ -53,7 +53,7 @@ for iter in $(seq 1 $COUNT); do
     echo "[INFO]: Completed iteration ${num}"
     
     echo "[INFO]: Begin tear down"
-    eval "${DIRNAME}/run-test -o stop"
+    eval "${DIRNAME}/run-test -o stop -p ${PARTN}"
     sleep 120
     echo "[INFO]: Tear down complete"
 done
