@@ -1,0 +1,1108 @@
+[INFO]: Begin iteration 1
+[INFO]: Starting the test...
+Error from server (NotFound): error when deleting "manifests/rttest-ktm-10part-tol.yaml": services "rttest-ktm" not found
+Error from server (NotFound): error when stopping "manifests/rttest-ktm-10part-tol.yaml": statefulsets.apps "rttest-ktm" not found
+Error from server (NotFound): error when deleting "manifests/rttest-eim-10part-tol.yaml": services "rttest-eim" not found
+Error from server (NotFound): error when stopping "manifests/rttest-eim-10part-tol.yaml": statefulsets.apps "rttest-eim" not found
+Created topic "planes10".
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" created
+service "rttest-ktm" created
+statefulset.apps "rttest-ktm" created
+service "rttest-eim" created
+statefulset.apps "rttest-eim" created
+deployment.apps "rttest-send-kafka-25k-10m" created
+[INFO]: Test started...
+[INFO]: Follow logs of rttest-ktm and rttest-eim for progress/ results!
+[INFO]: Completed iteration 
+[Kafka Topic Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565988441289 |       0 |           61,185 |                  |                  |                  |
+|          2 |           2 |1565988451286 |       9 |        4,686,638 |          462,684 |          462,684 |          462,684 |
+|          3 |           3 |1565988461289 |      20 |        9,388,720 |          466,377 |          470,067 |          466,377 |
+|          4 |           4 |1565988471286 |      29 |       14,708,142 |          486,458 |          532,102 |          488,281 |
+|          5 |           5 |1565988481286 |      39 |       19,850,841 |          496,038 |          514,270 |          494,779 |
+|          6 |           6 |1565988491286 |      49 |       24,778,813 |          498,312 |          492,797 |          494,382 |
+|          7 |           7 |1565988501286 |      59 |       29,241,878 |          493,552 |          446,307 |          486,369 |
+|          8 |           8 |1565988511286 |      69 |       34,285,840 |          492,472 |          504,396 |          488,945 |
+|          9 |           9 |1565988521286 |      79 |       39,855,889 |          496,271 |          557,005 |          497,452 |
+|         10 |          10 |1565988531287 |      89 |       44,960,203 |          498,974 |          510,380 |          498,889 |
+|         11 |          11 |1565988541287 |      99 |       49,132,658 |          496,734 |          417,246 |          490,725 |
+|         12 |          12 |1565988551288 |     109 |       54,986,488 |          498,849 |          585,324 |          499,325 |
+|         13 |          13 |1565988561289 |     120 |       59,131,622 |          497,345 |          414,472 |          492,254 |
+|         14 |          14 |1565988571288 |     129 |       64,620,964 |          497,876 |          548,989 |          496,618 |
+|         15 |          15 |1565988581288 |     139 |       69,893,903 |          498,956 |          527,294 |          498,809 |
+|         16 |          16 |1565988591288 |     149 |       74,434,583 |          498,688 |          454,068 |          495,826 |
+|         17 |          17 |1565988601288 |     159 |       80,021,823 |          499,682 |          558,724 |          499,757 |
+|         18 |          18 |1565988611288 |     169 |       84,431,212 |          499,349 |          440,939 |          496,297 |
+|         19 |          19 |1565988621521 |     180 |       89,876,154 |          499,640 |          532,096 |          498,330 |
+|         20 |          20 |1565988631288 |     189 |       94,598,665 |          499,626 |          483,517 |          497,568 |
+|         21 |          21 |1565988641287 |     199 |       99,431,717 |          499,405 |          483,354 |          496,858 |
+|         22 |          22 |1565988651287 |     209 |      104,938,026 |          499,846 |          550,631 |          499,418 |
+|         23 |          23 |1565988661287 |     219 |      108,944,141 |          499,104 |          400,612 |          494,927 |
+|         24 |          24 |1565988671288 |     229 |      115,282,168 |          499,878 |          633,739 |          500,963 |
+|         25 |          25 |1565988681289 |     240 |      119,129,962 |          499,418 |          384,741 |          496,120 |
+|         26 |          26 |1565988691289 |     250 |      125,018,722 |          499,821 |          588,876 |          499,830 |
+|         27 |          27 |1565988701289 |     260 |      129,773,322 |          499,947 |          475,460 |          498,893 |
+|         28 |          28 |1565988711289 |     270 |      133,934,995 |          499,429 |          416,167 |          495,829 |
+|         29 |          29 |1565988721289 |     280 |      140,337,524 |          499,983 |          640,253 |          500,987 |
+|         30 |          30 |1565988731293 |     290 |      144,299,423 |          499,761 |          396,031 |          497,366 |
+|         31 |          31 |1565988741290 |     300 |      149,426,811 |          499,660 |          512,893 |          497,884 |
+|         32 |          32 |1565988751290 |     310 |      155,206,967 |          500,021 |          578,016 |          500,469 |
+|         33 |          33 |1565988761290 |     320 |      159,040,951 |          499,697 |          383,398 |          496,810 |
+|         34 |          34 |1565988771290 |     330 |      164,830,855 |          499,827 |          578,990 |          499,301 |
+|         35 |          35 |1565988781290 |     340 |      170,091,261 |          500,061 |          526,041 |          500,087 |
+|         36 |          36 |1565988791290 |     350 |      173,949,987 |          499,743 |          385,873 |          496,824 |
+|         37 |          37 |1565988801290 |     360 |      179,912,943 |          499,886 |          596,296 |          499,587 |
+|         38 |          38 |1565988811289 |     370 |      185,109,759 |          500,088 |          519,734 |          500,131 |
+|         39 |          39 |1565988821386 |     380 |      188,958,020 |          499,799 |          381,129 |          496,970 |
+|         40 |          40 |1565988831290 |     390 |      194,669,682 |          499,829 |          576,703 |          498,995 |
+|         41 |          41 |1565988841290 |     400 |      199,934,302 |          499,948 |          526,462 |          499,682 |
+|         42 |          42 |1565988851290 |     410 |      200,000,000 |          498,412 |            6,570 |          487,654 |
+
+For last 10  seconds the count has not increased...
+Removing sample: 420|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  499,948 | Linear Regression Standard Error: 0.54 | Average Rate: 499,682
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[Elasticsearch Index Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565988502192 |       0 |       20,608,438 |                  |                  |                  |
+|          2 |           2 |1565988572144 |      69 |       51,484,245 |          441,386 |          441,386 |          441,386 |
+|          3 |           3 |1565988642212 |     140 |       75,597,235 |          392,708 |          344,137 |          392,721 |
+|          4 |           4 |1565988712138 |     209 |       98,461,737 |          368,153 |          326,981 |          370,825 |
+|          5 |           5 |1565988782175 |     279 |      122,124,231 |          357,175 |          337,857 |          362,578 |
+|          6 |           6 |1565988852199 |     350 |      145,729,953 |          351,171 |          337,109 |          357,483 |
+|          7 |           7 |1565988922188 |     419 |      169,697,017 |          348,092 |          342,440 |          354,976 |
+|          8 |           8 |1565988992101 |     489 |      191,932,761 |          344,310 |          318,049 |          349,706 |
+|          9 |           9 |1565989062105 |     559 |      200,000,000 |          327,271 |          115,240 |          320,392 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 629|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  344,310 | Linear Regression Standard Error: 5.37 | Average Rate: 349,706
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[INFO]: Begin tear down
+deployment.apps "rttest-send-kafka-25k-10m" deleted
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" deleted
+service "rttest-ktm" deleted
+statefulset.apps "rttest-ktm" deleted
+service "rttest-eim" deleted
+statefulset.apps "rttest-eim" deleted
+[INFO]: Tear down complete
+[INFO]: Begin iteration 2
+[INFO]: Starting the test...
+Error from server (NotFound): error when deleting "manifests/rttest-ktm-10part-tol.yaml": services "rttest-ktm" not found
+Error from server (NotFound): error when stopping "manifests/rttest-ktm-10part-tol.yaml": statefulsets.apps "rttest-ktm" not found
+Error from server (NotFound): error when deleting "manifests/rttest-eim-10part-tol.yaml": services "rttest-eim" not found
+Error from server (NotFound): error when stopping "manifests/rttest-eim-10part-tol.yaml": statefulsets.apps "rttest-eim" not found
+Topic planes10 is marked for deletion.
+Note: This will have no impact if delete.topic.enable is not set to true.
+Created topic "planes10".
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" created
+service "rttest-ktm" created
+statefulset.apps "rttest-ktm" created
+service "rttest-eim" created
+statefulset.apps "rttest-eim" created
+deployment.apps "rttest-send-kafka-25k-10m" created
+[INFO]: Test started...
+[INFO]: Follow logs of rttest-ktm and rttest-eim for progress/ results!
+[INFO]: Completed iteration 
+[Kafka Topic Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565989406012 |       0 |        3,773,360 |                  |                  |                  |
+|          2 |           2 |1565989416012 |      10 |        8,858,092 |          508,473 |          508,473 |          508,473 |
+|          3 |           3 |1565989426011 |      19 |       13,564,048 |          489,559 |          470,643 |          489,559 |
+|          4 |           4 |1565989436011 |      29 |       18,712,172 |          495,244 |          514,812 |          497,977 |
+|          5 |           5 |1565989446012 |      40 |       23,554,933 |          494,177 |          484,228 |          494,539 |
+|          6 |           6 |1565989456011 |      49 |       28,423,855 |          492,839 |          486,941 |          493,020 |
+|          7 |           7 |1565989466011 |      59 |       33,752,234 |          496,647 |          532,838 |          499,656 |
+|          8 |           8 |1565989476012 |      70 |       39,291,046 |          502,999 |          553,826 |          507,396 |
+|          9 |           9 |1565989486012 |      80 |       43,793,111 |          502,443 |          450,207 |          500,247 |
+|         10 |          10 |1565989496012 |      90 |       48,540,945 |          500,652 |          474,783 |          497,418 |
+|         11 |          11 |1565989506328 |     100 |       54,309,208 |          502,423 |          559,157 |          503,767 |
+|         12 |          12 |1565989516240 |     110 |       58,189,670 |          499,212 |          391,491 |          493,670 |
+|         13 |          13 |1565989526011 |     119 |       64,086,750 |          500,627 |          603,529 |          502,616 |
+|         14 |          14 |1565989536012 |     130 |       68,674,329 |          500,323 |          458,712 |          499,238 |
+|         15 |          15 |1565989546012 |     140 |       73,897,450 |          500,675 |          522,312 |          500,886 |
+|         16 |          16 |1565989556013 |     150 |       78,866,188 |          500,825 |          496,824 |          500,616 |
+|         17 |          17 |1565989566012 |     160 |       83,892,924 |          500,966 |          502,724 |          500,747 |
+|         18 |          18 |1565989576206 |     170 |       88,606,897 |          500,375 |          462,426 |          498,452 |
+|         19 |          19 |1565989586012 |     180 |       94,061,105 |          500,816 |          556,211 |          501,599 |
+|         20 |          20 |1565989596012 |     190 |       98,303,882 |          500,046 |          424,278 |          497,529 |
+|         21 |          21 |1565989606015 |     200 |      104,368,732 |          500,854 |          606,303 |          502,969 |
+|         22 |          22 |1565989616012 |     210 |      108,184,002 |          500,050 |          381,641 |          497,194 |
+|         23 |          23 |1565989626011 |     219 |      114,558,189 |          500,930 |          637,482 |          503,570 |
+|         24 |          24 |1565989636181 |     230 |      118,497,043 |          500,452 |          387,301 |          498,432 |
+|         25 |          25 |1565989646013 |     240 |      123,725,479 |          500,365 |          531,777 |          499,798 |
+|         26 |          26 |1565989656012 |     250 |      129,212,015 |          500,710 |          548,708 |          501,755 |
+|         27 |          27 |1565989666012 |     260 |      133,128,678 |          500,118 |          391,666 |          497,520 |
+|         28 |          28 |1565989676012 |     270 |      139,573,106 |          500,711 |          644,443 |          502,962 |
+|         29 |          29 |1565989686025 |     280 |      143,655,028 |          500,546 |          407,662 |          499,554 |
+|         30 |          30 |1565989696013 |     290 |      148,325,040 |          500,200 |          467,562 |          498,452 |
+|         31 |          31 |1565989706013 |     300 |      154,555,758 |          500,660 |          623,072 |          502,606 |
+|         32 |          32 |1565989716013 |     310 |      158,438,590 |          500,400 |          388,283 |          498,918 |
+|         33 |          33 |1565989726013 |     320 |      163,687,307 |          500,316 |          524,872 |          499,730 |
+|         34 |          34 |1565989736012 |     330 |      169,467,721 |          500,638 |          578,099 |          502,104 |
+|         35 |          35 |1565989746012 |     340 |      173,319,719 |          500,358 |          385,200 |          498,666 |
+|         36 |          36 |1565989756013 |     350 |      178,820,168 |          500,346 |          549,990 |          500,132 |
+|         37 |          37 |1565989766013 |     360 |      184,476,313 |          500,614 |          565,615 |          501,951 |
+|         38 |          38 |1565989776013 |     370 |      188,334,939 |          500,377 |          385,863 |          498,814 |
+|         39 |          39 |1565989786012 |     380 |      193,658,145 |          500,298 |          532,374 |          499,697 |
+|         40 |          40 |1565989796012 |     390 |      199,537,183 |          500,551 |          587,904 |          501,959 |
+|         41 |          41 |1565989806013 |     400 |      200,000,000 |          499,185 |           46,277 |          490,565 |
+
+For last 10  seconds the count has not increased...
+Removing sample: 410|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  500,551 | Linear Regression Standard Error: 0.59 | Average Rate: 501,959
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[Elasticsearch Index Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565989457061 |       0 |          498,407 |                  |                  |                  |
+|          2 |           2 |1565989527066 |      70 |       40,292,039 |          568,440 |          568,440 |          568,440 |
+|          3 |           3 |1565989597072 |     140 |       78,345,881 |          556,010 |          543,580 |          556,010 |
+|          4 |           4 |1565989667086 |     210 |      105,650,585 |          504,955 |          389,989 |          500,665 |
+|          5 |           5 |1565989737065 |     280 |      128,837,100 |          460,036 |          331,335 |          458,346 |
+|          6 |           6 |1565989807061 |     350 |      150,192,566 |          425,067 |          305,096 |          427,698 |
+|          7 |           7 |1565989877080 |     420 |      171,112,065 |          399,041 |          298,769 |          406,205 |
+|          8 |           8 |1565989947063 |     490 |      190,836,965 |          378,434 |          281,853 |          388,444 |
+|          9 |           9 |1565990017063 |     560 |      200,000,000 |          352,316 |          130,901 |          356,252 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 630|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  378,434 | Linear Regression Standard Error: 22.25 | Average Rate: 388,444
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[INFO]: Begin tear down
+deployment.apps "rttest-send-kafka-25k-10m" deleted
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" deleted
+service "rttest-ktm" deleted
+statefulset.apps "rttest-ktm" deleted
+service "rttest-eim" deleted
+statefulset.apps "rttest-eim" deleted
+[INFO]: Tear down complete
+[INFO]: Begin iteration 3
+[INFO]: Starting the test...
+Error from server (NotFound): error when deleting "manifests/rttest-ktm-10part-tol.yaml": services "rttest-ktm" not found
+Error from server (NotFound): error when stopping "manifests/rttest-ktm-10part-tol.yaml": statefulsets.apps "rttest-ktm" not found
+Error from server (NotFound): error when deleting "manifests/rttest-eim-10part-tol.yaml": services "rttest-eim" not found
+Error from server (NotFound): error when stopping "manifests/rttest-eim-10part-tol.yaml": statefulsets.apps "rttest-eim" not found
+Topic planes10 is marked for deletion.
+Note: This will have no impact if delete.topic.enable is not set to true.
+Created topic "planes10".
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" created
+service "rttest-ktm" created
+statefulset.apps "rttest-ktm" created
+service "rttest-eim" created
+statefulset.apps "rttest-eim" created
+deployment.apps "rttest-send-kafka-25k-10m" created
+[INFO]: Test started...
+[INFO]: Follow logs of rttest-ktm and rttest-eim for progress/ results!
+[INFO]: Completed iteration 
+[Kafka Topic Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565990358472 |       0 |           21,593 |                  |                  |                  |
+|          2 |           2 |1565990368469 |       9 |        4,288,697 |          426,838 |          426,838 |          426,838 |
+|          3 |           3 |1565990378470 |      19 |        9,147,450 |          456,340 |          485,827 |          456,338 |
+|          4 |           4 |1565990388469 |      29 |       14,157,270 |          472,697 |          501,032 |          471,236 |
+|          5 |           5 |1565990398468 |      39 |       19,258,899 |          483,471 |          510,214 |          480,981 |
+|          6 |           6 |1565990408468 |      49 |       24,166,546 |          487,591 |          490,765 |          482,938 |
+|          7 |           7 |1565990418468 |      59 |       28,893,262 |          487,464 |          472,672 |          481,227 |
+|          8 |           8 |1565990428468 |      69 |       34,050,389 |          489,766 |          515,713 |          486,153 |
+|          9 |           9 |1565990438468 |      79 |       39,615,864 |          495,292 |          556,548 |          494,953 |
+|         10 |          10 |1565990448469 |      89 |       44,426,632 |          497,327 |          481,029 |          493,406 |
+|         11 |          11 |1565990458469 |      99 |       48,872,563 |          496,040 |          444,593 |          488,524 |
+|         12 |          12 |1565990468469 |     109 |       54,731,192 |          498,752 |          585,863 |          497,374 |
+|         13 |          13 |1565990478469 |     119 |       58,884,762 |          497,642 |          415,357 |          490,539 |
+|         14 |          14 |1565990488470 |     129 |       64,383,390 |          498,435 |          549,808 |          495,098 |
+|         15 |          15 |1565990498470 |     139 |       69,335,962 |          498,871 |          495,257 |          495,110 |
+|         16 |          16 |1565990508469 |     149 |       74,186,692 |          498,859 |          485,122 |          494,444 |
+|         17 |          17 |1565990518469 |     159 |       79,504,934 |          499,498 |          531,824 |          496,780 |
+|         18 |          18 |1565990528469 |     169 |       84,177,102 |          499,380 |          467,217 |          495,041 |
+|         19 |          19 |1565990538469 |     179 |       89,369,534 |          499,608 |          519,243 |          496,386 |
+|         20 |          20 |1565990548472 |     190 |       94,346,762 |          499,746 |          497,574 |          496,448 |
+|         21 |          21 |1565990558469 |     199 |       98,933,927 |          499,317 |          458,854 |          494,569 |
+|         22 |          22 |1565990568469 |     209 |      104,673,939 |          499,881 |          574,001 |          498,352 |
+|         23 |          23 |1565990578470 |     219 |      108,626,389 |          499,171 |          395,205 |          493,663 |
+|         24 |          24 |1565990588470 |     229 |      114,967,662 |          499,975 |          634,127 |          499,770 |
+|         25 |          25 |1565990598471 |     239 |      118,864,357 |          499,582 |          389,631 |          495,180 |
+|         26 |          26 |1565990608471 |     249 |      124,503,411 |          499,822 |          563,905 |          497,929 |
+|         27 |          27 |1565990618470 |     259 |      129,510,800 |          500,021 |          500,789 |          498,039 |
+|         28 |          28 |1565990628471 |     269 |      133,598,399 |          499,505 |          408,719 |          494,731 |
+|         29 |          29 |1565990638471 |     279 |      140,016,031 |          500,070 |          641,763 |          499,982 |
+|         30 |          30 |1565990648472 |     290 |      144,028,459 |          499,892 |          401,203 |          496,575 |
+|         31 |          31 |1565990658475 |     300 |      148,952,382 |          499,699 |          492,245 |          496,431 |
+|         32 |          32 |1565990668475 |     310 |      154,915,432 |          500,089 |          596,305 |          499,653 |
+|         33 |          33 |1565990678475 |     320 |      158,761,031 |          499,795 |          384,560 |          496,056 |
+|         34 |          34 |1565990688475 |     330 |      164,345,368 |          499,845 |          558,434 |          497,946 |
+|         35 |          35 |1565990698474 |     340 |      169,796,575 |          500,103 |          545,175 |          499,335 |
+|         36 |          36 |1565990708474 |     350 |      173,662,137 |          499,809 |          386,556 |          496,113 |
+|         37 |          37 |1565990718475 |     360 |      179,468,270 |          499,905 |          580,555 |          498,459 |
+|         38 |          38 |1565990728475 |     370 |      184,802,913 |          500,122 |          533,464 |          499,405 |
+|         39 |          39 |1565990738475 |     380 |      188,662,411 |          499,868 |          385,950 |          496,419 |
+|         40 |          40 |1565990748475 |     390 |      194,324,890 |          499,894 |          566,248 |          498,210 |
+|         41 |          41 |1565990758474 |     400 |      199,770,434 |          500,071 |          544,609 |          499,370 |
+|         42 |          42 |1565990768474 |     410 |      200,000,000 |          498,640 |           22,957 |          487,750 |
+
+For last 10  seconds the count has not increased...
+Removing sample: 420|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  500,071 | Linear Regression Standard Error: 0.54 | Average Rate: 499,370
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[Elasticsearch Index Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565990419511 |       0 |          287,741 |                  |                  |                  |
+|          2 |           2 |1565990489514 |      70 |       50,065,231 |          711,077 |          711,077 |          711,077 |
+|          3 |           3 |1565990559474 |     139 |       78,708,704 |          560,313 |          409,426 |          560,298 |
+|          4 |           4 |1565990629497 |     209 |      105,549,818 |          492,100 |          383,319 |          501,281 |
+|          5 |           5 |1565990699481 |     279 |      128,562,667 |          445,812 |          328,830 |          458,174 |
+|          6 |           6 |1565990769517 |     350 |      151,181,915 |          415,026 |          322,966 |          431,119 |
+|          7 |           7 |1565990839474 |     419 |      172,706,907 |          392,541 |          307,689 |          410,558 |
+|          8 |           8 |1565990909475 |     489 |      192,730,959 |          374,297 |          286,054 |          392,770 |
+|          9 |           9 |1565990979474 |     559 |      200,000,000 |          347,752 |          103,845 |          356,653 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 629|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  374,297 | Linear Regression Standard Error: 22.34 | Average Rate: 392,770
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[INFO]: Begin tear down
+deployment.apps "rttest-send-kafka-25k-10m" deleted
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" deleted
+service "rttest-ktm" deleted
+statefulset.apps "rttest-ktm" deleted
+service "rttest-eim" deleted
+statefulset.apps "rttest-eim" deleted
+[INFO]: Tear down complete
+[INFO]: Begin iteration 4
+[INFO]: Starting the test...
+Error from server (NotFound): error when deleting "manifests/rttest-ktm-10part-tol.yaml": services "rttest-ktm" not found
+Error from server (NotFound): error when stopping "manifests/rttest-ktm-10part-tol.yaml": statefulsets.apps "rttest-ktm" not found
+Error from server (NotFound): error when deleting "manifests/rttest-eim-10part-tol.yaml": services "rttest-eim" not found
+Error from server (NotFound): error when stopping "manifests/rttest-eim-10part-tol.yaml": statefulsets.apps "rttest-eim" not found
+Topic planes10 is marked for deletion.
+Note: This will have no impact if delete.topic.enable is not set to true.
+Created topic "planes10".
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" created
+service "rttest-ktm" created
+statefulset.apps "rttest-ktm" created
+service "rttest-eim" created
+statefulset.apps "rttest-eim" created
+deployment.apps "rttest-send-kafka-25k-10m" created
+[INFO]: Test started...
+[INFO]: Follow logs of rttest-ktm and rttest-eim for progress/ results!
+[INFO]: Completed iteration 
+[Kafka Topic Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565991319976 |       0 |           15,772 |                  |                  |                  |
+|          2 |           2 |1565991329972 |       9 |        4,357,437 |          434,340 |          434,340 |          434,340 |
+|          3 |           3 |1565991339973 |      19 |        9,118,278 |          455,195 |          476,036 |          455,194 |
+|          4 |           4 |1565991349972 |      29 |       14,310,932 |          476,517 |          519,317 |          476,569 |
+|          5 |           5 |1565991359971 |      39 |       19,532,297 |          489,915 |          522,189 |          487,974 |
+|          6 |           6 |1565991369971 |      49 |       24,413,327 |          493,484 |          488,103 |          488,000 |
+|          7 |           7 |1565991379971 |      59 |       28,911,507 |          490,080 |          449,818 |          481,636 |
+|          8 |           8 |1565991389971 |      69 |       33,997,263 |          490,203 |          508,576 |          485,485 |
+|          9 |           9 |1565991399971 |      79 |       39,580,486 |          494,802 |          558,322 |          494,590 |
+|         10 |          10 |1565991409971 |      89 |       44,693,178 |          498,041 |          511,269 |          496,443 |
+|         11 |          11 |1565991419972 |      99 |       48,828,981 |          495,967 |          413,539 |          488,152 |
+|         12 |          12 |1565991429972 |     109 |       54,710,695 |          498,316 |          588,171 |          497,245 |
+|         13 |          13 |1565991439972 |     119 |       59,050,369 |          497,615 |          433,967 |          491,971 |
+|         14 |          14 |1565991449972 |     129 |       64,290,661 |          497,929 |          524,029 |          494,437 |
+|         15 |          15 |1565991459972 |     139 |       69,625,002 |          499,020 |          533,434 |          497,223 |
+|         16 |          16 |1565991469972 |     149 |       74,116,631 |          498,651 |          449,163 |          494,019 |
+|         17 |          17 |1565991479972 |     159 |       79,784,017 |          499,733 |          566,739 |          498,564 |
+|         18 |          18 |1565991489972 |     169 |       84,109,717 |          499,313 |          432,570 |          494,682 |
+|         19 |          19 |1565991499972 |     179 |       89,667,351 |          499,905 |          555,763 |          498,075 |
+|         20 |          20 |1565991509975 |     189 |       94,259,054 |          499,751 |          459,033 |          496,020 |
+|         21 |          21 |1565991519972 |     199 |       99,190,603 |          499,554 |          493,303 |          495,884 |
+|         22 |          22 |1565991529972 |     209 |      104,620,848 |          499,921 |          543,025 |          498,129 |
+|         23 |          23 |1565991539975 |     219 |      108,669,608 |          499,166 |          404,755 |          493,883 |
+|         24 |          24 |1565991549973 |     229 |      114,977,366 |          499,902 |          630,902 |          499,840 |
+|         25 |          25 |1565991559974 |     239 |      118,818,993 |          499,405 |          384,124 |          495,018 |
+|         26 |          26 |1565991569974 |     249 |      124,775,488 |          499,838 |          595,650 |          499,043 |
+|         27 |          27 |1565991579974 |     259 |      129,446,083 |          499,921 |          467,060 |          497,813 |
+|         28 |          28 |1565991589974 |     269 |      133,669,344 |          499,414 |          422,326 |          495,017 |
+|         29 |          29 |1565991599975 |     279 |      140,040,093 |          499,954 |          637,011 |          500,089 |
+|         30 |          30 |1565991609974 |     289 |      143,969,168 |          499,703 |          392,947 |          496,394 |
+|         31 |          31 |1565991619975 |     299 |      149,220,763 |          499,651 |          525,107 |          497,352 |
+|         32 |          32 |1565991629975 |     309 |      154,875,516 |          499,982 |          565,475 |          499,549 |
+|         33 |          33 |1565991639975 |     319 |      158,728,136 |          499,643 |          385,262 |          495,978 |
+|         34 |          34 |1565991649975 |     329 |      164,614,874 |          499,809 |          588,674 |          498,787 |
+|         35 |          35 |1565991659975 |     339 |      169,751,697 |          500,015 |          513,682 |          499,225 |
+|         36 |          36 |1565991669974 |     349 |      173,637,317 |          499,686 |          388,601 |          496,064 |
+|         37 |          37 |1565991679974 |     359 |      179,718,199 |          499,870 |          608,088 |          499,176 |
+|         38 |          38 |1565991689974 |     369 |      184,756,112 |          500,043 |          503,791 |          499,301 |
+|         39 |          39 |1565991699975 |     379 |      188,643,838 |          499,762 |          388,734 |          496,391 |
+|         40 |          40 |1565991709974 |     389 |      194,573,467 |          499,862 |          593,022 |          498,868 |
+|         41 |          41 |1565991719974 |     399 |      199,741,675 |          500,008 |          516,821 |          499,317 |
+|         42 |          42 |1565991729974 |     409 |      200,000,000 |          498,558 |           25,833 |          487,769 |
+
+For last 10  seconds the count has not increased...
+Removing sample: 419|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  500,008 | Linear Regression Standard Error: 0.56 | Average Rate: 499,317
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[Elasticsearch Index Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565991381105 |       0 |           17,408 |                  |                  |                  |
+|          2 |           2 |1565991451104 |      69 |       49,012,948 |          699,946 |          699,946 |          699,946 |
+|          3 |           3 |1565991521138 |     140 |       81,484,803 |          581,763 |          463,658 |          581,773 |
+|          4 |           4 |1565991591146 |     210 |      105,297,678 |          497,475 |          340,145 |          501,237 |
+|          5 |           5 |1565991661105 |     280 |      129,704,038 |          450,919 |          348,867 |          463,167 |
+|          6 |           6 |1565991731109 |     350 |      149,350,819 |          413,288 |          280,652 |          426,662 |
+|          7 |           7 |1565991801104 |     419 |      173,998,388 |          393,294 |          352,133 |          414,241 |
+|          8 |           8 |1565991871104 |     489 |      195,982,773 |          378,360 |          314,063 |          399,930 |
+|          9 |           9 |1565991941103 |     559 |      200,000,000 |          349,993 |           57,390 |          357,113 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 630|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  378,360 | Linear Regression Standard Error: 22.28 | Average Rate: 399,930
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[INFO]: Begin tear down
+deployment.apps "rttest-send-kafka-25k-10m" deleted
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" deleted
+service "rttest-ktm" deleted
+statefulset.apps "rttest-ktm" deleted
+service "rttest-eim" deleted
+statefulset.apps "rttest-eim" deleted
+[INFO]: Tear down complete
+[INFO]: Begin iteration 5
+[INFO]: Starting the test...
+Error from server (NotFound): error when deleting "manifests/rttest-ktm-10part-tol.yaml": services "rttest-ktm" not found
+Error from server (NotFound): error when stopping "manifests/rttest-ktm-10part-tol.yaml": statefulsets.apps "rttest-ktm" not found
+Error from server (NotFound): error when deleting "manifests/rttest-eim-10part-tol.yaml": services "rttest-eim" not found
+Error from server (NotFound): error when stopping "manifests/rttest-eim-10part-tol.yaml": statefulsets.apps "rttest-eim" not found
+Topic planes10 is marked for deletion.
+Note: This will have no impact if delete.topic.enable is not set to true.
+Created topic "planes10".
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" created
+service "rttest-ktm" created
+statefulset.apps "rttest-ktm" created
+service "rttest-eim" created
+statefulset.apps "rttest-eim" created
+deployment.apps "rttest-send-kafka-25k-10m" created
+[INFO]: Test started...
+[INFO]: Follow logs of rttest-ktm and rttest-eim for progress/ results!
+[INFO]: Completed iteration 
+[Kafka Topic Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565992293822 |       0 |           39,482 |                  |                  |                  |
+|          2 |           2 |1565992303819 |       9 |        4,467,102 |          442,895 |          442,895 |          442,895 |
+|          3 |           3 |1565992313820 |      19 |        9,225,170 |          459,331 |          475,759 |          459,330 |
+|          4 |           4 |1565992323820 |      29 |       14,482,317 |          480,891 |          525,715 |          481,460 |
+|          5 |           5 |1565992333820 |      39 |       19,612,104 |          491,620 |          512,979 |          489,340 |
+|          6 |           6 |1565992343820 |      49 |       24,525,856 |          494,650 |          491,375 |          489,747 |
+|          7 |           7 |1565992353821 |      59 |       29,102,363 |          491,763 |          457,605 |          484,389 |
+|          8 |           8 |1565992363821 |      69 |       34,122,173 |          491,411 |          501,981 |          486,903 |
+|          9 |           9 |1565992373820 |      79 |       39,698,173 |          495,663 |          557,656 |          495,746 |
+|         10 |          10 |1565992383821 |      89 |       44,745,725 |          498,321 |          504,705 |          496,742 |
+|         11 |          11 |1565992393821 |      99 |       48,962,422 |          496,287 |          421,670 |          489,234 |
+|         12 |          12 |1565992403822 |     110 |       54,830,139 |          498,591 |          586,713 |          498,097 |
+|         13 |          13 |1565992413822 |     120 |       59,186,528 |          497,909 |          435,639 |          492,892 |
+|         14 |          14 |1565992423822 |     130 |       64,456,242 |          498,310 |          526,971 |          495,514 |
+|         15 |          15 |1565992433821 |     139 |       69,652,853 |          499,106 |          519,713 |          497,242 |
+|         16 |          16 |1565992443822 |     150 |       74,264,262 |          498,800 |          461,095 |          494,832 |
+|         17 |          17 |1565992453822 |     160 |       79,800,181 |          499,664 |          553,592 |          498,504 |
+|         18 |          18 |1565992463821 |     169 |       84,253,455 |          499,318 |          445,372 |          495,379 |
+|         19 |          19 |1565992473822 |     180 |       89,685,498 |          499,763 |          543,150 |          498,033 |
+|         20 |          20 |1565992483822 |     190 |       94,427,580 |          499,722 |          474,208 |          496,779 |
+|         21 |          21 |1565992493822 |     200 |       99,242,462 |          499,455 |          481,488 |          496,015 |
+|         22 |          22 |1565992503821 |     209 |      104,767,190 |          499,883 |          552,528 |          498,706 |
+|         23 |          23 |1565992513821 |     219 |      108,782,932 |          499,141 |          401,574 |          494,291 |
+|         24 |          24 |1565992523822 |     230 |      115,115,005 |          499,909 |          633,144 |          500,328 |
+|         25 |          25 |1565992533823 |     240 |      118,952,736 |          499,435 |          383,735 |          495,470 |
+|         26 |          26 |1565992543823 |     250 |      124,812,588 |          499,802 |          585,985 |          499,090 |
+|         27 |          27 |1565992553822 |     260 |      129,591,162 |          499,919 |          477,905 |          498,276 |
+|         28 |          28 |1565992563823 |     270 |      133,778,131 |          499,412 |          418,655 |          495,326 |
+|         29 |          29 |1565992573824 |     280 |      140,164,611 |          499,964 |          638,584 |          500,443 |
+|         30 |          30 |1565992583823 |     290 |      144,113,640 |          499,734 |          394,942 |          496,806 |
+|         31 |          31 |1565992593824 |     300 |      149,261,097 |          499,637 |          514,694 |          497,402 |
+|         32 |          32 |1565992603823 |     310 |      155,013,920 |          499,987 |          575,340 |          499,916 |
+|         33 |          33 |1565992613823 |     320 |      158,864,854 |          499,662 |          385,093 |          496,328 |
+|         34 |          34 |1565992623823 |     330 |      164,642,541 |          499,786 |          577,769 |          498,796 |
+|         35 |          35 |1565992633825 |     340 |      169,894,536 |          500,010 |          525,094 |          499,569 |
+|         36 |          36 |1565992643824 |     350 |      173,783,634 |          499,698 |          388,949 |          496,409 |
+|         37 |          37 |1565992653824 |     360 |      179,737,686 |          499,843 |          595,405 |          499,159 |
+|         38 |          38 |1565992663824 |     370 |      184,899,091 |          500,032 |          516,141 |          499,618 |
+|         39 |          39 |1565992673824 |     380 |      188,764,070 |          499,757 |          386,498 |          496,641 |
+|         40 |          40 |1565992683824 |     390 |      194,606,255 |          499,830 |          584,219 |          498,887 |
+|         41 |          41 |1565992693823 |     400 |      199,810,379 |          499,964 |          520,464 |          499,426 |
+|         42 |          42 |1565992703824 |     410 |      200,000,000 |          498,482 |           18,960 |          487,706 |
+
+For last 10  seconds the count has not increased...
+Removing sample: 420|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  499,964 | Linear Regression Standard Error: 0.53 | Average Rate: 499,426
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[Elasticsearch Index Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565992354569 |       0 |          176,462 |                  |                  |                  |
+|          2 |           2 |1565992424547 |      69 |       52,430,032 |          746,714 |          746,714 |          746,714 |
+|          3 |           3 |1565992494545 |     139 |       75,554,903 |          538,500 |          330,365 |          538,510 |
+|          4 |           4 |1565992564582 |     210 |       98,499,651 |          454,380 |          327,609 |          468,177 |
+|          5 |           5 |1565992634545 |     279 |      123,156,565 |          417,188 |          352,428 |          439,252 |
+|          6 |           6 |1565992704544 |     349 |      138,543,765 |          378,364 |          219,820 |          395,363 |
+|          7 |           7 |1565992774583 |     420 |      163,914,161 |          362,767 |          362,232 |          389,839 |
+|          8 |           8 |1565992844626 |     490 |      181,616,240 |          347,094 |          252,732 |          370,242 |
+|          9 |           9 |1565992914545 |     559 |      198,380,321 |          332,636 |          239,764 |          353,951 |
+|         10 |          10 |1565992984544 |     629 |      200,000,000 |          308,395 |           23,139 |          317,193 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 699|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  332,636 | Linear Regression Standard Error: 19.68 | Average Rate: 353,951
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[INFO]: Begin tear down
+deployment.apps "rttest-send-kafka-25k-10m" deleted
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" deleted
+service "rttest-ktm" deleted
+statefulset.apps "rttest-ktm" deleted
+service "rttest-eim" deleted
+statefulset.apps "rttest-eim" deleted
+[INFO]: Tear down complete
+[INFO]: Begin iteration 6
+[INFO]: Starting the test...
+Error from server (NotFound): error when deleting "manifests/rttest-ktm-10part-tol.yaml": services "rttest-ktm" not found
+Error from server (NotFound): error when stopping "manifests/rttest-ktm-10part-tol.yaml": statefulsets.apps "rttest-ktm" not found
+Error from server (NotFound): error when deleting "manifests/rttest-eim-10part-tol.yaml": services "rttest-eim" not found
+Error from server (NotFound): error when stopping "manifests/rttest-eim-10part-tol.yaml": statefulsets.apps "rttest-eim" not found
+Topic planes10 is marked for deletion.
+Note: This will have no impact if delete.topic.enable is not set to true.
+Created topic "planes10".
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" created
+service "rttest-ktm" created
+statefulset.apps "rttest-ktm" created
+service "rttest-eim" created
+statefulset.apps "rttest-eim" created
+deployment.apps "rttest-send-kafka-25k-10m" created
+[INFO]: Test started...
+[INFO]: Follow logs of rttest-ktm and rttest-eim for progress/ results!
+[INFO]: Completed iteration 
+[Kafka Topic Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565993272128 |       0 |           30,816 |                  |                  |                  |
+|          2 |           2 |1565993282124 |       9 |        4,403,592 |          437,453 |          437,453 |          437,453 |
+|          3 |           3 |1565993292124 |      19 |        9,192,675 |          458,186 |          478,908 |          458,185 |
+|          4 |           4 |1565993302124 |      29 |       14,383,320 |          478,525 |          519,064 |          478,481 |
+|          5 |           5 |1565993312124 |      39 |       19,593,316 |          491,088 |          521,000 |          489,111 |
+|          6 |           6 |1565993322125 |      49 |       24,500,709 |          494,620 |          490,690 |          489,427 |
+|          7 |           7 |1565993332125 |      59 |       29,047,233 |          491,599 |          454,652 |          483,631 |
+|          8 |           8 |1565993342125 |      69 |       34,070,934 |          491,238 |          502,370 |          486,308 |
+|          9 |           9 |1565993352124 |      79 |       39,633,178 |          495,405 |          556,280 |          495,054 |
+|         10 |          10 |1565993362125 |      89 |       44,752,331 |          498,425 |          511,864 |          496,922 |
+|         11 |          11 |1565993372126 |      99 |       48,913,165 |          496,326 |          416,042 |          488,833 |
+|         12 |          12 |1565993382125 |     109 |       54,761,999 |          498,524 |          584,942 |          497,570 |
+|         13 |          13 |1565993392126 |     119 |       59,179,385 |          497,978 |          441,694 |          492,913 |
+|         14 |          14 |1565993402125 |     129 |       64,379,819 |          498,267 |          520,095 |          495,004 |
+|         15 |          15 |1565993412125 |     139 |       69,698,983 |          499,296 |          531,916 |          497,640 |
+|         16 |          16 |1565993422124 |     149 |       74,187,948 |          498,874 |          448,941 |          494,394 |
+|         17 |          17 |1565993432125 |     159 |       79,840,106 |          499,884 |          565,159 |          498,817 |
+|         18 |          18 |1565993442125 |     169 |       84,181,519 |          499,440 |          434,141 |          495,013 |
+|         19 |          19 |1565993452125 |     179 |       89,741,313 |          500,014 |          555,979 |          498,400 |
+|         20 |          20 |1565993462125 |     189 |       94,350,819 |          499,875 |          460,951 |          496,429 |
+|         21 |          21 |1565993472125 |     199 |       99,269,490 |          499,668 |          491,867 |          496,201 |
+|         22 |          22 |1565993482125 |     209 |      104,688,934 |          500,013 |          541,944 |          498,379 |
+|         23 |          23 |1565993492124 |     219 |      108,720,653 |          499,224 |          403,212 |          494,054 |
+|         24 |          24 |1565993502125 |     229 |      115,068,392 |          499,972 |          634,710 |          500,170 |
+|         25 |          25 |1565993512125 |     239 |      118,867,825 |          499,446 |          379,943 |          495,160 |
+|         26 |          26 |1565993522125 |     249 |      124,882,620 |          499,904 |          601,480 |          499,413 |
+|         27 |          27 |1565993532125 |     259 |      129,503,403 |          499,968 |          462,078 |          497,977 |
+|         28 |          28 |1565993542125 |     269 |      133,714,042 |          499,435 |          421,064 |          495,129 |
+|         29 |          29 |1565993552126 |     279 |      140,156,311 |          500,004 |          644,162 |          500,452 |
+|         30 |          30 |1565993562126 |     289 |      144,012,296 |          499,729 |          385,599 |          496,491 |
+|         31 |          31 |1565993572126 |     299 |      149,300,301 |          499,679 |          528,801 |          497,568 |
+|         32 |          32 |1565993582126 |     309 |      154,966,707 |          500,018 |          566,641 |          499,796 |
+|         33 |          33 |1565993592125 |     319 |      158,749,981 |          499,649 |          378,365 |          496,002 |
+|         34 |          34 |1565993602125 |     329 |      164,744,208 |          499,844 |          599,423 |          499,136 |
+|         35 |          35 |1565993612125 |     339 |      169,825,919 |          500,048 |          508,171 |          499,402 |
+|         36 |          36 |1565993622125 |     349 |      173,658,871 |          499,693 |          383,295 |          496,084 |
+|         37 |          37 |1565993632125 |     359 |      179,856,573 |          499,905 |          619,770 |          499,520 |
+|         38 |          38 |1565993642126 |     369 |      184,827,774 |          500,074 |          497,070 |          499,454 |
+|         39 |          39 |1565993652126 |     379 |      188,660,820 |          499,770 |          383,305 |          496,397 |
+|         40 |          40 |1565993662125 |     389 |      194,722,514 |          499,898 |          606,230 |          499,213 |
+|         41 |          41 |1565993672126 |     399 |      199,804,916 |          500,037 |          508,189 |          499,438 |
+|         42 |          42 |1565993682125 |     409 |      200,000,000 |          498,561 |           19,510 |          487,733 |
+
+For last 10  seconds the count has not increased...
+Removing sample: 419|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  500,037 | Linear Regression Standard Error: 0.57 | Average Rate: 499,438
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[Elasticsearch Index Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565993332973 |       0 |          584,885 |                  |                  |                  |
+|          2 |           2 |1565993402972 |      69 |       41,987,602 |          591,476 |          591,476 |          591,476 |
+|          3 |           3 |1565993473037 |     140 |       80,268,755 |          568,907 |          546,366 |          568,910 |
+|          4 |           4 |1565993543017 |     210 |      104,361,090 |          499,309 |          344,275 |          494,069 |
+|          5 |           5 |1565993612972 |     279 |      128,217,494 |          453,755 |          341,025 |          455,832 |
+|          6 |           6 |1565993682967 |     349 |      153,431,069 |          427,371 |          360,220 |          436,711 |
+|          7 |           7 |1565993752994 |     420 |      176,201,033 |          406,990 |          325,160 |          418,113 |
+|          8 |           8 |1565993822967 |     489 |      197,494,157 |          389,945 |          304,305 |          401,861 |
+|          9 |           9 |1565993892967 |     559 |      200,000,000 |          358,380 |           35,798 |          356,102 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 629|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  389,945 | Linear Regression Standard Error: 19.65 | Average Rate: 401,861
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[INFO]: Begin tear down
+deployment.apps "rttest-send-kafka-25k-10m" deleted
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" deleted
+service "rttest-ktm" deleted
+statefulset.apps "rttest-ktm" deleted
+service "rttest-eim" deleted
+statefulset.apps "rttest-eim" deleted
+[INFO]: Tear down complete
+[INFO]: Begin iteration 7
+[INFO]: Starting the test...
+Error from server (NotFound): error when deleting "manifests/rttest-ktm-10part-tol.yaml": services "rttest-ktm" not found
+Error from server (NotFound): error when stopping "manifests/rttest-ktm-10part-tol.yaml": statefulsets.apps "rttest-ktm" not found
+Error from server (NotFound): error when deleting "manifests/rttest-eim-10part-tol.yaml": services "rttest-eim" not found
+Error from server (NotFound): error when stopping "manifests/rttest-eim-10part-tol.yaml": statefulsets.apps "rttest-eim" not found
+Topic planes10 is marked for deletion.
+Note: This will have no impact if delete.topic.enable is not set to true.
+Created topic "planes10".
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" created
+service "rttest-ktm" created
+statefulset.apps "rttest-ktm" created
+service "rttest-eim" created
+statefulset.apps "rttest-eim" created
+deployment.apps "rttest-send-kafka-25k-10m" created
+[INFO]: Test started...
+[INFO]: Follow logs of rttest-ktm and rttest-eim for progress/ results!
+[INFO]: Completed iteration 
+[Kafka Topic Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565994254240 |       0 |           24,930 |                  |                  |                  |
+|          2 |           2 |1565994264237 |       9 |        4,467,025 |          444,343 |          444,343 |          444,343 |
+|          3 |           3 |1565994274238 |      19 |        9,233,775 |          460,489 |          476,627 |          460,488 |
+|          4 |           4 |1565994284238 |      29 |       14,398,497 |          478,899 |          516,472 |          479,151 |
+|          5 |           5 |1565994294237 |      39 |       19,514,887 |          489,139 |          511,690 |          487,285 |
+|          6 |           6 |1565994304238 |      49 |       24,428,893 |          492,381 |          491,351 |          488,099 |
+|          7 |           7 |1565994314239 |      59 |       29,048,602 |          490,275 |          461,925 |          483,736 |
+|          8 |           8 |1565994324238 |      69 |       34,132,152 |          490,908 |          508,406 |          487,260 |
+|          9 |           9 |1565994334237 |      79 |       39,662,485 |          495,349 |          553,089 |          495,488 |
+|         10 |          10 |1565994344237 |      89 |       44,616,784 |          497,614 |          495,430 |          495,482 |
+|         11 |          11 |1565994354237 |      99 |       48,991,492 |          496,115 |          437,471 |          489,680 |
+|         12 |          12 |1565994364238 |     109 |       54,777,870 |          498,423 |          578,580 |          497,763 |
+|         13 |          13 |1565994374238 |     119 |       59,120,586 |          497,703 |          434,272 |          492,472 |
+|         14 |          14 |1565994384238 |     129 |       64,436,967 |          498,220 |          531,638 |          495,485 |
+|         15 |          15 |1565994394238 |     139 |       69,556,574 |          498,899 |          511,961 |          496,662 |
+|         16 |          16 |1565994404238 |     149 |       74,254,850 |          498,713 |          469,828 |          494,873 |
+|         17 |          17 |1565994414239 |     159 |       79,698,129 |          499,478 |          544,273 |          497,961 |
+|         18 |          18 |1565994424239 |     169 |       84,247,675 |          499,234 |          454,955 |          495,431 |
+|         19 |          19 |1565994434239 |     179 |       89,593,131 |          499,617 |          534,546 |          497,604 |
+|         20 |          20 |1565994444239 |     189 |       94,404,206 |          499,632 |          481,108 |          496,736 |
+|         21 |          21 |1565994454239 |     199 |       99,193,298 |          499,373 |          478,909 |          495,844 |
+|         22 |          22 |1565994464239 |     209 |      104,716,910 |          499,807 |          552,361 |          498,536 |
+|         23 |          23 |1565994474239 |     219 |      108,807,536 |          499,152 |          409,063 |          494,469 |
+|         24 |          24 |1565994484239 |     229 |      115,020,223 |          499,868 |          621,269 |          499,982 |
+|         25 |          25 |1565994494240 |     240 |      118,963,093 |          499,450 |          394,248 |          495,576 |
+|         26 |          26 |1565994504240 |     250 |      124,711,657 |          499,766 |          574,856 |          498,747 |
+|         27 |          27 |1565994514240 |     260 |      129,549,669 |          499,890 |          483,801 |          498,172 |
+|         28 |          28 |1565994524241 |     270 |      133,807,431 |          499,442 |          425,734 |          495,489 |
+|         29 |          29 |1565994534241 |     280 |      140,055,567 |          499,944 |          624,814 |          500,108 |
+|         30 |          30 |1565994544241 |     290 |      144,106,882 |          499,741 |          405,132 |          496,833 |
+|         31 |          31 |1565994554241 |     300 |      149,222,908 |          499,647 |          511,603 |          497,325 |
+|         32 |          32 |1565994564242 |     310 |      154,930,815 |          499,973 |          570,734 |          499,693 |
+|         33 |          33 |1565994574242 |     320 |      158,880,317 |          499,682 |          394,950 |          496,420 |
+|         34 |          34 |1565994584245 |     330 |      164,569,138 |          499,787 |          568,711 |          498,611 |
+|         35 |          35 |1565994594242 |     340 |      169,823,142 |          499,998 |          525,558 |          499,404 |
+|         36 |          36 |1565994604242 |     350 |      173,799,753 |          499,715 |          397,661 |          496,497 |
+|         37 |          37 |1565994614243 |     360 |      179,661,571 |          499,844 |          586,123 |          498,987 |
+|         38 |          38 |1565994624243 |     370 |      184,827,359 |          500,021 |          516,579 |          499,462 |
+|         39 |          39 |1565994634242 |     380 |      188,800,918 |          499,778 |          397,396 |          496,776 |
+|         40 |          40 |1565994644242 |     390 |      194,537,203 |          499,840 |          573,629 |          498,747 |
+|         41 |          41 |1565994654242 |     400 |      199,787,390 |          499,980 |          525,019 |          499,404 |
+|         42 |          42 |1565994664243 |     410 |      200,000,000 |          498,512 |           21,259 |          487,741 |
+
+For last 10  seconds the count has not increased...
+Removing sample: 420|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  499,980 | Linear Regression Standard Error: 0.49 | Average Rate: 499,404
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[Elasticsearch Index Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565994315299 |       0 |          140,224 |                  |                  |                  |
+|          2 |           2 |1565994385297 |      69 |       49,903,304 |          710,921 |          710,921 |          710,921 |
+|          3 |           3 |1565994455292 |     139 |       76,634,516 |          546,416 |          381,902 |          546,415 |
+|          4 |           4 |1565994525292 |     209 |       99,895,606 |          465,728 |          332,301 |          475,041 |
+|          5 |           5 |1565994595327 |     280 |      128,081,726 |          436,930 |          402,458 |          456,888 |
+|          6 |           6 |1565994665291 |     349 |      149,147,229 |          409,311 |          301,091 |          425,744 |
+|          7 |           7 |1565994735293 |     419 |      172,600,925 |          391,488 |          335,043 |          410,627 |
+|          8 |           8 |1565994805292 |     489 |      197,386,532 |          380,945 |          354,085 |          402,549 |
+|          9 |           9 |1565994875294 |     559 |      200,000,000 |          353,116 |           37,334 |          356,896 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 629|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  380,945 | Linear Regression Standard Error: 18.90 | Average Rate: 402,549
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[INFO]: Begin tear down
+deployment.apps "rttest-send-kafka-25k-10m" deleted
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" deleted
+service "rttest-ktm" deleted
+statefulset.apps "rttest-ktm" deleted
+service "rttest-eim" deleted
+statefulset.apps "rttest-eim" deleted
+[INFO]: Tear down complete
+[INFO]: Begin iteration 8
+[INFO]: Starting the test...
+Error from server (NotFound): error when deleting "manifests/rttest-ktm-10part-tol.yaml": services "rttest-ktm" not found
+Error from server (NotFound): error when stopping "manifests/rttest-ktm-10part-tol.yaml": statefulsets.apps "rttest-ktm" not found
+Error from server (NotFound): error when deleting "manifests/rttest-eim-10part-tol.yaml": services "rttest-eim" not found
+Error from server (NotFound): error when stopping "manifests/rttest-eim-10part-tol.yaml": statefulsets.apps "rttest-eim" not found
+Topic planes10 is marked for deletion.
+Note: This will have no impact if delete.topic.enable is not set to true.
+Created topic "planes10".
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" created
+service "rttest-ktm" created
+statefulset.apps "rttest-ktm" created
+service "rttest-eim" created
+statefulset.apps "rttest-eim" created
+deployment.apps "rttest-send-kafka-25k-10m" created
+[INFO]: Test started...
+[INFO]: Follow logs of rttest-ktm and rttest-eim for progress/ results!
+[INFO]: Completed iteration 
+[Kafka Topic Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565995215214 |       0 |          109,486 |                  |                  |                  |
+|          2 |           2 |1565995225211 |       9 |        4,621,439 |          451,331 |          451,331 |          451,331 |
+|          3 |           3 |1565995235212 |      19 |        9,381,993 |          463,673 |          476,008 |          463,672 |
+|          4 |           4 |1565995245212 |      29 |       14,593,018 |          482,137 |          521,102 |          482,817 |
+|          5 |           5 |1565995255212 |      39 |       19,779,134 |          493,124 |          518,612 |          491,766 |
+|          6 |           6 |1565995265337 |      50 |       24,533,662 |          492,858 |          469,583 |          487,285 |
+|          7 |           7 |1565995275211 |      59 |       29,255,124 |          491,214 |          478,171 |          485,785 |
+|          8 |           8 |1565995285212 |      69 |       34,274,622 |          491,416 |          501,900 |          488,087 |
+|          9 |           9 |1565995295211 |      79 |       39,844,928 |          495,885 |          557,086 |          496,712 |
+|         10 |          10 |1565995305229 |      90 |       44,809,835 |          498,146 |          495,599 |          496,588 |
+|         11 |          11 |1565995315211 |      99 |       49,111,138 |          496,330 |          430,906 |          490,031 |
+|         12 |          12 |1565995325212 |     109 |       54,989,206 |          498,798 |          587,748 |          498,916 |
+|         13 |          13 |1565995335212 |     119 |       59,162,034 |          497,602 |          417,283 |          492,113 |
+|         14 |          14 |1565995345212 |     129 |       64,600,860 |          498,173 |          543,883 |          496,095 |
+|         15 |          15 |1565995355213 |     139 |       69,890,660 |          499,313 |          528,927 |          498,441 |
+|         16 |          16 |1565995365213 |     149 |       74,404,442 |          499,018 |          451,378 |          495,303 |
+|         17 |          17 |1565995375213 |     159 |       80,051,245 |          500,104 |          564,680 |          499,639 |
+|         18 |          18 |1565995385213 |     169 |       84,395,543 |          499,713 |          434,430 |          495,803 |
+|         19 |          19 |1565995395213 |     179 |       89,917,990 |          500,263 |          552,245 |          498,939 |
+|         20 |          20 |1565995405213 |     189 |       94,575,804 |          500,171 |          465,781 |          497,194 |
+|         21 |          21 |1565995415214 |     200 |       99,387,641 |          499,856 |          481,136 |          496,391 |
+|         22 |          22 |1565995425213 |     209 |      104,924,353 |          500,258 |          553,727 |          499,121 |
+|         23 |          23 |1565995435213 |     219 |      108,906,141 |          499,454 |          398,179 |          494,532 |
+|         24 |          24 |1565995445213 |     229 |      115,298,985 |          500,234 |          639,284 |          500,826 |
+|         25 |          25 |1565995455212 |     239 |      119,097,853 |          499,730 |          379,925 |          495,789 |
+|         26 |          26 |1565995465212 |     249 |      125,039,922 |          500,141 |          594,207 |          499,726 |
+|         27 |          27 |1565995475213 |     259 |      129,731,890 |          500,222 |          469,150 |          498,550 |
+|         28 |          28 |1565995485213 |     269 |      133,910,141 |          499,677 |          417,825 |          495,560 |
+|         29 |          29 |1565995495213 |     279 |      140,349,338 |          500,233 |          643,920 |          500,858 |
+|         30 |          30 |1565995505213 |     289 |      144,266,674 |          499,985 |          391,734 |          497,095 |
+|         31 |          31 |1565995515214 |     300 |      149,413,291 |          499,870 |          514,610 |          497,679 |
+|         32 |          32 |1565995525214 |     310 |      155,180,396 |          500,212 |          576,711 |          500,229 |
+|         33 |          33 |1565995535214 |     320 |      159,015,100 |          499,871 |          383,470 |          496,580 |
+|         34 |          34 |1565995545214 |     330 |      164,845,436 |          500,006 |          583,034 |          499,200 |
+|         35 |          35 |1565995555214 |     340 |      170,058,088 |          500,221 |          521,265 |          499,849 |
+|         36 |          36 |1565995565214 |     350 |      173,931,990 |          499,893 |          387,390 |          496,636 |
+|         37 |          37 |1565995575215 |     360 |      179,946,750 |          500,049 |          601,416 |          499,547 |
+|         38 |          38 |1565995585215 |     370 |      185,056,609 |          500,226 |          510,986 |          499,856 |
+|         39 |          39 |1565995595215 |     380 |      188,951,576 |          499,951 |          389,497 |          496,952 |
+|         40 |          40 |1565995605215 |     390 |      194,782,717 |          500,020 |          583,114 |          499,161 |
+|         41 |          41 |1565995615216 |     400 |      199,865,579 |          500,108 |          508,235 |          499,388 |
+|         42 |          42 |1565995625217 |     410 |      200,000,000 |          498,566 |           13,441 |          487,534 |
+
+For last 10  seconds the count has not increased...
+Removing sample: 420|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  500,108 | Linear Regression Standard Error: 0.55 | Average Rate: 499,388
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[Elasticsearch Index Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565995275967 |       0 |          170,605 |                  |                  |                  |
+|          2 |           2 |1565995345928 |      69 |       50,861,801 |          724,564 |          724,564 |          724,564 |
+|          3 |           3 |1565995415927 |     139 |       79,387,641 |          565,983 |          407,518 |          565,998 |
+|          4 |           4 |1565995485926 |     209 |      102,658,778 |          480,059 |          332,450 |          488,134 |
+|          5 |           5 |1565995555972 |     280 |      129,097,107 |          442,339 |          377,442 |          460,444 |
+|          6 |           6 |1565995625925 |     349 |      153,102,323 |          417,410 |          343,162 |          437,000 |
+|          7 |           7 |1565995695949 |     419 |      174,602,578 |          396,675 |          307,041 |          415,332 |
+|          8 |           8 |1565995765925 |     489 |      196,125,483 |          380,614 |          307,576 |          399,942 |
+|          9 |           9 |1565995835926 |     559 |      200,000,000 |          351,434 |           55,349 |          356,864 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 629|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  380,614 | Linear Regression Standard Error: 21.06 | Average Rate: 399,942
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[INFO]: Begin tear down
+deployment.apps "rttest-send-kafka-25k-10m" deleted
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" deleted
+service "rttest-ktm" deleted
+statefulset.apps "rttest-ktm" deleted
+service "rttest-eim" deleted
+statefulset.apps "rttest-eim" deleted
+[INFO]: Tear down complete
+[INFO]: Begin iteration 9
+[INFO]: Starting the test...
+Error from server (NotFound): error when deleting "manifests/rttest-ktm-10part-tol.yaml": services "rttest-ktm" not found
+Error from server (NotFound): error when stopping "manifests/rttest-ktm-10part-tol.yaml": statefulsets.apps "rttest-ktm" not found
+Error from server (NotFound): error when deleting "manifests/rttest-eim-10part-tol.yaml": services "rttest-eim" not found
+Error from server (NotFound): error when stopping "manifests/rttest-eim-10part-tol.yaml": statefulsets.apps "rttest-eim" not found
+Topic planes10 is marked for deletion.
+Note: This will have no impact if delete.topic.enable is not set to true.
+Created topic "planes10".
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" created
+service "rttest-ktm" created
+statefulset.apps "rttest-ktm" created
+service "rttest-eim" created
+statefulset.apps "rttest-eim" created
+deployment.apps "rttest-send-kafka-25k-10m" created
+[INFO]: Test started...
+[INFO]: Follow logs of rttest-ktm and rttest-eim for progress/ results!
+[INFO]: Completed iteration 
+[Kafka Topic Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565996186708 |       0 |           16,191 |                  |                  |                  |
+|          2 |           2 |1565996196708 |      10 |        4,517,870 |          450,168 |          450,168 |          450,168 |
+|          3 |           3 |1565996206708 |      20 |        9,257,060 |          462,043 |          473,919 |          462,043 |
+|          4 |           4 |1565996216707 |      29 |       14,515,683 |          482,391 |          525,915 |          483,333 |
+|          5 |           5 |1565996226708 |      40 |       19,686,301 |          493,385 |          517,010 |          491,753 |
+|          6 |           6 |1565996236708 |      50 |       24,582,805 |          495,993 |          489,650 |          491,332 |
+|          7 |           7 |1565996246707 |      59 |       29,106,588 |          492,256 |          452,424 |          484,848 |
+|          8 |           8 |1565996256707 |      69 |       34,167,399 |          491,852 |          506,081 |          487,881 |
+|          9 |           9 |1565996266707 |      79 |       39,748,694 |          496,081 |          558,130 |          496,662 |
+|         10 |          10 |1565996276706 |      89 |       44,849,176 |          498,999 |          510,099 |          498,155 |
+|         11 |          11 |1565996286707 |      99 |       49,006,268 |          496,802 |          415,668 |          489,906 |
+|         12 |          12 |1565996297844 |     111 |       54,879,491 |          496,845 |          527,361 |          493,659 |
+|         13 |          13 |1565996306707 |     119 |       59,231,035 |          496,699 |          490,979 |          493,461 |
+|         14 |          14 |1565996316707 |     129 |       64,492,524 |          497,444 |          526,149 |          495,976 |
+|         15 |          15 |1565996326707 |     139 |       69,773,420 |          498,693 |          528,090 |          498,269 |
+|         16 |          16 |1565996336706 |     149 |       74,295,496 |          498,509 |          452,253 |          495,202 |
+|         17 |          17 |1565996346707 |     159 |       79,929,000 |          499,650 |          563,294 |          499,458 |
+|         18 |          18 |1565996356707 |     169 |       84,288,218 |          499,336 |          435,922 |          495,721 |
+|         19 |          19 |1565996366710 |     180 |       89,813,658 |          499,947 |          552,378 |          498,869 |
+|         20 |          20 |1565996376708 |     190 |       94,460,824 |          499,892 |          464,810 |          497,077 |
+|         21 |          21 |1565996386708 |     200 |       99,329,331 |          499,681 |          486,851 |          496,566 |
+|         22 |          22 |1565996396708 |     210 |      104,814,007 |          500,102 |          548,468 |          499,037 |
+|         23 |          23 |1565996406710 |     220 |      108,832,275 |          499,352 |          401,746 |          494,614 |
+|         24 |          24 |1565996416708 |     230 |      115,186,112 |          500,136 |          635,511 |          500,739 |
+|         25 |          25 |1565996426708 |     240 |      118,998,712 |          499,650 |          381,260 |          495,761 |
+|         26 |          26 |1565996437256 |     250 |      124,864,618 |          499,776 |          556,115 |          498,301 |
+|         27 |          27 |1565996446709 |     260 |      129,641,972 |          499,918 |          505,380 |          498,559 |
+|         28 |          28 |1565996456709 |     270 |      133,819,183 |          499,425 |          417,721 |          495,565 |
+|         29 |          29 |1565996466709 |     280 |      140,248,713 |          500,016 |          642,953 |          500,829 |
+|         30 |          30 |1565996476709 |     290 |      144,162,623 |          499,797 |          391,391 |          497,055 |
+|         31 |          31 |1565996486708 |     300 |      149,301,745 |          499,702 |          513,964 |          497,619 |
+|         32 |          32 |1565996496708 |     310 |      155,076,860 |          500,067 |          577,512 |          500,196 |
+|         33 |          33 |1565996506708 |     320 |      158,910,768 |          499,745 |          383,391 |          496,546 |
+|         34 |          34 |1565996516709 |     330 |      164,731,669 |          499,891 |          582,032 |          499,136 |
+|         35 |          35 |1565996526708 |     340 |      169,948,587 |          500,118 |          521,744 |          499,801 |
+|         36 |          36 |1565996536708 |     350 |      173,822,348 |          499,802 |          387,376 |          496,589 |
+|         37 |          37 |1565996546708 |     360 |      179,841,299 |          499,969 |          601,895 |          499,514 |
+|         38 |          38 |1565996556709 |     370 |      184,958,789 |          500,159 |          511,698 |          499,844 |
+|         39 |          39 |1565996566708 |     380 |      188,827,042 |          499,886 |          386,864 |          496,871 |
+|         40 |          40 |1565996576709 |     390 |      194,688,168 |          499,967 |          586,054 |          499,158 |
+|         41 |          41 |1565996587245 |     400 |      199,868,270 |          500,006 |          491,657 |          498,960 |
+|         42 |          42 |1565996596709 |     410 |      200,000,000 |          498,512 |           13,919 |          487,764 |
+
+For last 10  seconds the count has not increased...
+Removing sample: 420|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  500,006 | Linear Regression Standard Error: 0.53 | Average Rate: 498,960
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[Elasticsearch Index Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565996247700 |       0 |          541,543 |                  |                  |                  |
+|          2 |           2 |1565996317708 |      70 |       41,409,056 |          583,755 |          583,755 |          583,755 |
+|          3 |           3 |1565996387720 |     140 |       78,016,715 |          553,315 |          522,877 |          553,315 |
+|          4 |           4 |1565996457687 |     209 |      102,095,267 |          487,554 |          344,142 |          483,619 |
+|          5 |           5 |1565996527687 |     279 |      123,641,084 |          438,442 |          307,797 |          439,662 |
+|          6 |           6 |1565996597688 |     349 |      142,831,596 |          400,937 |          274,146 |          406,557 |
+|          7 |           7 |1565996667735 |     420 |      166,633,878 |          380,986 |          339,804 |          395,425 |
+|          8 |           8 |1565996737686 |     489 |      186,142,868 |          364,175 |          278,895 |          378,789 |
+|          9 |           9 |1565996807690 |     559 |      200,000,000 |          345,246 |          197,948 |          356,182 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 629|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  364,175 | Linear Regression Standard Error: 21.30 | Average Rate: 378,789
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[INFO]: Begin tear down
+deployment.apps "rttest-send-kafka-25k-10m" deleted
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" deleted
+service "rttest-ktm" deleted
+statefulset.apps "rttest-ktm" deleted
+service "rttest-eim" deleted
+statefulset.apps "rttest-eim" deleted
+[INFO]: Tear down complete
+[INFO]: Begin iteration 10
+[INFO]: Starting the test...
+Error from server (NotFound): error when deleting "manifests/rttest-ktm-10part-tol.yaml": services "rttest-ktm" not found
+Error from server (NotFound): error when stopping "manifests/rttest-ktm-10part-tol.yaml": statefulsets.apps "rttest-ktm" not found
+Error from server (NotFound): error when deleting "manifests/rttest-eim-10part-tol.yaml": services "rttest-eim" not found
+Error from server (NotFound): error when stopping "manifests/rttest-eim-10part-tol.yaml": statefulsets.apps "rttest-eim" not found
+Topic planes10 is marked for deletion.
+Note: This will have no impact if delete.topic.enable is not set to true.
+Created topic "planes10".
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" created
+service "rttest-ktm" created
+statefulset.apps "rttest-ktm" created
+service "rttest-eim" created
+statefulset.apps "rttest-eim" created
+deployment.apps "rttest-send-kafka-25k-10m" created
+[INFO]: Test started...
+[INFO]: Follow logs of rttest-ktm and rttest-eim for progress/ results!
+[INFO]: Completed iteration 
+[Kafka Topic Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565997158422 |       0 |           16,645 |                  |                  |                  |
+|          2 |           2 |1565997168420 |       9 |        4,408,947 |          439,318 |          439,318 |          439,318 |
+|          3 |           3 |1565997178420 |      19 |        9,207,495 |          459,589 |          479,855 |          459,588 |
+|          4 |           4 |1565997188419 |      29 |       14,363,931 |          478,448 |          515,695 |          478,291 |
+|          5 |           5 |1565997198419 |      39 |       19,599,971 |          491,251 |          523,604 |          489,620 |
+|          6 |           6 |1565997208420 |      49 |       24,467,302 |          494,257 |          486,684 |          489,033 |
+|          7 |           7 |1565997218420 |      59 |       29,008,633 |          491,031 |          454,133 |          483,216 |
+|          8 |           8 |1565997228420 |      69 |       34,108,780 |          491,269 |          510,015 |          487,044 |
+|          9 |           9 |1565997238420 |      79 |       39,694,903 |          495,870 |          558,612 |          495,991 |
+|         10 |          10 |1565997248420 |      89 |       44,744,401 |          498,707 |          504,950 |          496,986 |
+|         11 |          11 |1565997258420 |      99 |       48,939,596 |          496,655 |          419,520 |          489,239 |
+|         12 |          12 |1565997268420 |     109 |       54,820,779 |          498,989 |          588,118 |          498,228 |
+|         13 |          13 |1565997278420 |     119 |       59,101,694 |          498,063 |          428,092 |          492,384 |
+|         14 |          14 |1565997288419 |     129 |       64,435,740 |          498,492 |          533,458 |          495,543 |
+|         15 |          15 |1565997298420 |     139 |       69,662,949 |          499,375 |          522,669 |          497,481 |
+|         16 |          16 |1565997308420 |     149 |       74,238,851 |          499,044 |          457,590 |          494,821 |
+|         17 |          17 |1565997318420 |     159 |       79,820,293 |          499,976 |          558,144 |          498,779 |
+|         18 |          18 |1565997328420 |     169 |       84,236,757 |          499,606 |          441,646 |          495,418 |
+|         19 |          19 |1565997338420 |     179 |       89,683,624 |          500,054 |          544,687 |          498,155 |
+|         20 |          20 |1565997348420 |     189 |       94,417,764 |          499,999 |          473,414 |          496,853 |
+|         21 |          21 |1565997358420 |     199 |       99,171,907 |          499,639 |          475,414 |          495,781 |
+|         22 |          22 |1565997368420 |     209 |      104,758,879 |          500,070 |          558,697 |          498,777 |
+|         23 |          23 |1565997378423 |     220 |      108,739,325 |          499,286 |          397,925 |          494,192 |
+|         24 |          24 |1565997388420 |     229 |      115,105,734 |          500,058 |          636,832 |          500,392 |
+|         25 |          25 |1565997398420 |     239 |      118,947,009 |          499,589 |          384,128 |          495,547 |
+|         26 |          26 |1565997408890 |     250 |      124,704,904 |          499,671 |          549,942 |          497,821 |
+|         27 |          27 |1565997418420 |     259 |      129,589,050 |          499,832 |          512,502 |          498,359 |
+|         28 |          28 |1565997428420 |     269 |      133,721,710 |          499,323 |          413,266 |          495,208 |
+|         29 |          29 |1565997438420 |     279 |      140,165,346 |          499,911 |          644,364 |          500,535 |
+|         30 |          30 |1565997448420 |     289 |      144,099,536 |          499,702 |          393,419 |          496,841 |
+|         31 |          31 |1565997458420 |     299 |      149,193,009 |          499,590 |          509,347 |          497,258 |
+|         32 |          32 |1565997468419 |     309 |      155,008,835 |          499,964 |          581,641 |          499,980 |
+|         33 |          33 |1565997478420 |     319 |      158,840,481 |          499,649 |          383,126 |          496,328 |
+|         34 |          34 |1565997488420 |     329 |      164,637,617 |          499,789 |          579,714 |          498,854 |
+|         35 |          35 |1565997498419 |     339 |      169,877,961 |          500,023 |          524,087 |          499,597 |
+|         36 |          36 |1565997508419 |     349 |      173,735,657 |          499,706 |          385,770 |          496,344 |
+|         37 |          37 |1565997518509 |     360 |      179,723,197 |          499,840 |          593,413 |          499,064 |
+|         38 |          38 |1565997528420 |     369 |      184,885,048 |          500,039 |          520,820 |          499,647 |
+|         39 |          39 |1565997538419 |     379 |      188,740,264 |          499,768 |          385,560 |          496,645 |
+|         40 |          40 |1565997548419 |     389 |      194,605,546 |          499,853 |          586,528 |          498,950 |
+|         41 |          41 |1565997558419 |     399 |      199,836,533 |          500,008 |          523,099 |          499,553 |
+|         42 |          42 |1565997568419 |     409 |      200,000,000 |          498,535 |           16,347 |          487,768 |
+
+For last 10  seconds the count has not increased...
+Removing sample: 419|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  500,008 | Linear Regression Standard Error: 0.55 | Average Rate: 499,553
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[Elasticsearch Index Monitor Logs]
+Start Count: 0
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+|          1 |           1 |1565997219309 |       0 |          114,331 |                  |                  |                  |
+|          2 |           2 |1565997289285 |      69 |       54,876,992 |          782,592 |          782,592 |          782,592 |
+|          3 |           3 |1565997359276 |     139 |       81,932,252 |          584,544 |          386,553 |          584,552 |
+|          4 |           4 |1565997429276 |     209 |      104,956,741 |          488,042 |          328,921 |          499,328 |
+|          5 |           5 |1565997499276 |     279 |      131,771,286 |          447,747 |          383,065 |          470,259 |
+|          6 |           6 |1565997569285 |     349 |      153,912,771 |          417,448 |          316,266 |          439,454 |
+|          7 |           7 |1565997639280 |     419 |      176,124,188 |          395,902 |          317,329 |          419,100 |
+|          8 |           8 |1565997709278 |     489 |      198,130,625 |          380,131 |          314,387 |          404,140 |
+|          9 |           9 |1565997779276 |     559 |      200,000,000 |          349,210 |           26,706 |          356,960 |
+
+For last 70  seconds the count has not increased...
+Removing sample: 629|200000000
+Total Count: 200,000,000 | Linear Regression Rate:  380,131 | Linear Regression Standard Error: 23.35 | Average Rate: 404,140
+
+Start Count: 200000000
+Watching for changes in count...  Use Ctrl-C to Exit.
+
+|Query Number|Sample Number|Epoch (ms)    |Time (s) |Count             |Linear Reg. Rate  |Rate From Previous|Rate From First   |
+|------------|-------------|--------------|---------|------------------|------------------|------------------|------------------|
+-------------------------------------------------------------------------
+[INFO]: Begin tear down
+deployment.apps "rttest-send-kafka-25k-10m" deleted
+sparkapplication.sparkoperator.k8s.io "sparkop-es-2.4.1" deleted
+service "rttest-ktm" deleted
+statefulset.apps "rttest-ktm" deleted
+service "rttest-eim" deleted
+statefulset.apps "rttest-eim" deleted
+[INFO]: Tear down complete
