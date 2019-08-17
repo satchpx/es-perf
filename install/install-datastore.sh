@@ -67,7 +67,7 @@ if [ ${STORAGE_PROVIDER} == "px" ]; then
         # Install master
         helm install --name datastore-elasticsearch-master --values manifests/es-master-values-px-rf3.yaml helm-charts/elastic/elasticsearch
         # Install client
-        helm install --name datastore-elasticsearch-client --values manifests/es-client-values-px-rf3.yaml helm-charts/elastic/elasticsearch
+        helm install --name datastore-elasticsearch-client --values manifests/es-client-values-px-rf3-db-remote.yaml helm-charts/elastic/elasticsearch
     else
         # Install master
         helm install --name datastore-elasticsearch-master --values manifests/es-master-values-px-rf1.yaml helm-charts/elastic/elasticsearch
