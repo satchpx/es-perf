@@ -5,7 +5,7 @@ printUsage() {
 Usage:
   $0 
     -s <storage provider> [px|mp|gp2]
-    -r <replication factor> [1|2]
+    -r <replication factor> [1|2|3]
     -k <kubeconfig file> [Optional]
 EOUSAGE
   echo "Example: install-datastore.sh px"
@@ -63,6 +63,11 @@ if [ ${STORAGE_PROVIDER} == "px" ]; then
         helm install --name datastore-elasticsearch-master --values manifests/es-master-values-px-rf2.yaml helm-charts/elastic/elasticsearch
         # Install client
         helm install --name datastore-elasticsearch-client --values manifests/es-client-values-px-rf2.yaml helm-charts/elastic/elasticsearch
+    elif [ ${RF} -eq 3 ]; then
+        # Install master
+        helm install --name datastore-elasticsearch-master --values manifests/es-master-values-px-rf3.yaml helm-charts/elastic/elasticsearch
+        # Install client
+        helm install --name datastore-elasticsearch-client --values manifests/es-client-values-px-rf3.yaml helm-charts/elastic/elasticsearch
     else
         # Install master
         helm install --name datastore-elasticsearch-master --values manifests/es-master-values-px-rf1.yaml helm-charts/elastic/elasticsearch

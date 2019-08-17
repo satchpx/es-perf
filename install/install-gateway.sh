@@ -5,7 +5,7 @@ printUsage() {
 Usage:
   $0 
     -s <storage provider> [px|mp|gp2]
-    -r <replication factor> [1|2]
+    -r <replication factor> [1|2|3]
 EOUSAGE
   echo "Example: install-datastore.sh px"
 }
@@ -40,6 +40,8 @@ elif [ ${STORAGE_PROVIDER} == "px" ]; then
         helm  upgrade --wait --timeout=600 --install --values manifests/kafka-values-px-rf1.yaml gateway helm-charts/confluent
     elif [ ${RF} -eq 2 ]; then
         helm  upgrade --wait --timeout=600 --install --values manifests/kafka-values-px-rf2.yaml gateway helm-charts/confluent
+    elif [ ${RF} -eq 3 ]; then
+        helm  upgrade --wait --timeout=600 --install --values manifests/kafka-values-px-rf3.yaml gateway helm-charts/confluent
     else
         echo "[ERROR]: Unknown replication factor ${RF}"
         exit 1
