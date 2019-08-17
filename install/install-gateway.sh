@@ -41,7 +41,7 @@ elif [ ${STORAGE_PROVIDER} == "px" ]; then
     elif [ ${RF} -eq 2 ]; then
         helm  upgrade --wait --timeout=600 --install --values manifests/kafka-values-px-rf2.yaml gateway helm-charts/confluent
     elif [ ${RF} -eq 3 ]; then
-        helm  upgrade --wait --timeout=600 --install --values manifests/kafka-values-px-rf3.yaml gateway helm-charts/confluent
+        helm  upgrade --wait --timeout=600 --install --values manifests/kafka-values-px-rf3-db-remote.yaml gateway helm-charts/confluent
     else
         echo "[ERROR]: Unknown replication factor ${RF}"
         exit 1
