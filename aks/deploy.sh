@@ -6,6 +6,7 @@ Usage:
     up.sh
       -g <Resource Group Name to create>
       -r <Region> [westus|eastus]
+      -t <instance ttype> [Default: Standard_D16s_v3]
       -c <AKS Cluster Name>
       -n <Cluster Size> [Optional, Default=3]
       -s <PX Disk Size in GiB> [Optional, Default=200]
@@ -19,7 +20,7 @@ EOUSAGE
 CLUSTER_SIZE=3
 DISK_SIZE_GB=200
 DISK_SKU="Standard_LRS"
-while getopts "h?:g:r:c:n:s:d:" opt; do
+while getopts "h?:g:r:c:n:s:d:t:" opt; do
     case "$opt" in
     h|\?)
         printUsage
@@ -28,6 +29,8 @@ while getopts "h?:g:r:c:n:s:d:" opt; do
     g)  RG_NAME=$OPTARG
         ;;
     r)  REGION=$OPTARG
+        ;;
+    t)  VM_TYPE=$OPTARG
         ;;
     c)  CLUSTER_NAME=$OPTARG
         ;;
@@ -58,6 +61,10 @@ if [[ (${DISK_SKU} != "Standard_LRS") && (${DISK_SKU} != "StandardSSD_LRS") && (
     echo "[ERROR]: Invalid Disk type"
     printUsage
     exit 1
+fi
+
+if [ -z ${VM_TYPE} ]; then
+    VM_TYPE='Standard_D16s_v3'
 fi
 
 source .creds.env
@@ -103,7 +110,7 @@ AKSSUBNET=$(az network vnet subnet show --resource-group ${RG_NAME} --vnet-name 
 #az aks create --resource-group ${RG_NAME} --name ${CLUSTER_NAME} --node-count ${CLUSTER_SIZE} --enable-vmss --enable-cluster-autoscaler --min-count ${CLUSTER_SIZE} --max-count ${CLUSTER_SIZE_MAX} --enable-addons monitoring --generate-ssh-keys --kubernetes-version ${K8S_VER}
 az aks create \
     --resource-group ${RG_NAME} \
-    --node-vm-size Standard_D16s_v3 \
+    --node-vm-size ${VM_TYPE} \
     --node-osdisk-size 100 \
     --name ${CLUSTER_NAME} \
     --node-count ${CLUSTER_SIZE} \
