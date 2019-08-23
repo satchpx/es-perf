@@ -138,26 +138,26 @@ RG_UPPER="MC_${RG_NAME}_${CLUSTER_NAME}_${REGION}"
 az vm list --resource-group ${RG_UPPER} | jq '.[].name'
 
 # Attach disks
-echo "[INFO]: Attaching disks to VMs now..."
-for vm in $(az vm list --resource-group ${RG_UPPER} | jq '.[].name' | tr -d "\""); do
-    echo "Attaching disk to vm $vm"
-    az vm disk attach --resource-group ${RG_UPPER} --vm-name $vm --name px_$vm --size-gb ${DISK_SIZE_GB} --sku ${DISK_SKU} --new
-    # Add a disk for internal kvdb
-    az vm disk attach --resource-group ${RG_UPPER} --vm-name $vm --name px_$vm --size-gb 64 --sku ${DISK_SKU} --new
-done
+#echo "[INFO]: Attaching disks to VMs now..."
+#for vm in $(az vm list --resource-group ${RG_UPPER} | jq '.[].name' | tr -d "\""); do
+#    echo "Attaching disk to vm $vm"
+#    az vm disk attach --resource-group ${RG_UPPER} --vm-name $vm --name px_$vm --size-gb ${DISK_SIZE_GB} --sku ${DISK_SKU} --new
+#    # Add a disk for internal kvdb
+#    az vm disk attach --resource-group ${RG_UPPER} --vm-name $vm --name px_$vm --size-gb 64 --sku ${DISK_SKU} --new
+#done
 
 # Install PX
-PX_CLUSTER_NAME=px-cluster-$(uuidgen)
-PX_INST_CMD="kubectl apply -f https://install.portworx.com/?mc=false\&kbver=${K8S_VER}\&k=etcd%3Ahttp%3A%2F%2Fpx-etcd1.portworx.com%3A2379%2Cetcd%3Ahttp%3A%2F%2Fpx-etcd2.portworx.com%3A2379%2Cetcd%3Ahttp%3A%2F%2Fpx-etcd3.portworx.com%3A2379\&c=${PX_CLUSTER_NAME}\&aks=true\&stork=true\&lh=true\&st=k8s"
-echo "[INFO]: Installing PX..."
-echo "[INFO]: Running ${PX_INST_CMD}"
-eval "${PX_INST_CMD}"
+#PX_CLUSTER_NAME=px-cluster-$(uuidgen)
+#PX_INST_CMD="kubectl apply -f https://install.portworx.com/?mc=false\&kbver=${K8S_VER}\&k=etcd%3Ahttp%3A%2F%2Fpx-etcd1.portworx.com%3A2379%2Cetcd%3Ahttp%3A%2F%2Fpx-etcd2.portworx.com%3A2379%2Cetcd%3Ahttp%3A%2F%2Fpx-etcd3.portworx.com%3A2379\&c=${PX_CLUSTER_NAME}\&aks=true\&stork=true\&lh=true\&st=k8s"
+#echo "[INFO]: Installing PX..."
+#echo "[INFO]: Running ${PX_INST_CMD}"
+#eval "${PX_INST_CMD}"
 
-echo "[INFO]: Sleeping for px to start..."
-sleep 180
+#echo "[INFO]: Sleeping for px to start..."
+#sleep 180
 
 # Done
-echo "[INFO]: Setting up pxctl alias"
-PX_POD=$(kubectl get pods -l name=portworx -n kube-system -o jsonpath='{.items[0].metadata.name}')
-alias pxctl="kubectl exec $PX_POD -n kube-system -- /opt/pwx/bin/pxctl"
-echo "[INFO]: Done! Use kubectl and pxctl to access your AKS cluster with PX installed"
+#echo "[INFO]: Setting up pxctl alias"
+#PX_POD=$(kubectl get pods -l name=portworx -n kube-system -o jsonpath='{.items[0].metadata.name}')
+#alias pxctl="kubectl exec $PX_POD -n kube-system -- /opt/pwx/bin/pxctl"
+#echo "[INFO]: Done! Use kubectl and pxctl to access your AKS cluster with PX installed"
