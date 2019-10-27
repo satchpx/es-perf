@@ -100,7 +100,9 @@ VNET=$(az network vnet show --resource-group ${RG_NAME} --name ${RG_NAME} --quer
 az role assignment create --assignee ${APPID} --scope ${VNET} --role Contributor
 
 # Get latest kubernetes version
-K8S_VER=`az aks get-versions --location westus --output table | grep None | awk '{print $1}'`
+#K8S_VER=`az aks get-versions --location westus --output table | grep None | awk '{print $1}'`
+# Hardcode for now
+K8S_VER='1.14.6'
 
 # Set cluster max size
 CLUSTER_SIZE_MAX=$((CLUSTER_SIZE*2))

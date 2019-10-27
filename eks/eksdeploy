@@ -24,7 +24,7 @@ NODE_TYPE='t2.xlarge'
 NODEGROUP_NAME='standard-workers'
 AMI='auto'
 
-while getopts "h?:n:r:v:t:g:c:i:k:" opt; do
+while getopts "h?:n:r:v:t:g:c:i:k:m:x:" opt; do
     case "$opt" in
     h|\?)
         printUsage
