@@ -85,8 +85,8 @@ cmd="eksctl create cluster \
 --nodegroup-name ${NODEGROUP_NAME} \
 --node-type ${NODE_TYPE} \
 --nodes ${NODE_COUNT} \
---nodes-min ${NODE_COUNT_MAX} \
---nodes-max ${NODE_COUNT_MIN} \
+--nodes-min ${NODE_COUNT_MIN} \
+--nodes-max ${NODE_COUNT_MAX} \
 --node-ami ${AMI} \
 --ssh-public-key ${KEY}"
 
@@ -98,8 +98,8 @@ cmd="eksctl create cluster \
 --nodegroup-name ${NODEGROUP_NAME} \
 --node-type ${NODE_TYPE} \
 --nodes ${NODE_COUNT} \
---nodes-min ${NODE_COUNT_MAX} \
---nodes-max ${NODE_COUNT_MIN} \
+--nodes-min ${NODE_COUNT_MIN} \
+--nodes-max ${NODE_COUNT_MAX} \
 --node-ami ${AMI} \
 --ssh-public-key ${KEY}"
 fi
