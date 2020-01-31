@@ -102,7 +102,7 @@ az role assignment create --assignee ${APPID} --scope ${VNET} --role Contributor
 # Get latest kubernetes version
 #K8S_VER=`az aks get-versions --location westus --output table | grep None | awk '{print $1}'`
 # Hardcode for now
-K8S_VER='1.14.6'
+K8S_VER='1.14.8'
 
 # Set cluster max size
 CLUSTER_SIZE_MAX=$((CLUSTER_SIZE*2))
