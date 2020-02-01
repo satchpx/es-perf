@@ -10,13 +10,19 @@ EOUSAGE
     echo "Example: destroy.sh -g sathya-px-rg"
 }
 
-while getopts "h?:g:" opt; do
+while getopts "h?:g:a:p:u:" opt; do
     case "$opt" in
     h|\?)
         printUsage
         exit 0
         ;;
     g)  RG_NAME=$OPTARG
+        ;;
+    a)  APP_ID=$OPTARG
+        ;;
+    p)  PASS_KEY=$OPTARG
+        ;;
+    u)  TENANT_ID=$OPTARG
         ;;
     :)
         echo "[ERROR] Option -$OPTARG requires an argument." >&2
@@ -35,5 +41,12 @@ if [[ (-z ${RG_NAME}) ]]; then
     exit 1
 fi
 
-az login
+if [[ (-z ${APP_ID}) || (-z ${PASS_KEY}) || (-z ${TENANT_ID}) ]]; then
+    echo "[INFO]: App ID, Pass Key and Tenant Id arguments missing. Using interactive mode..."
+    az login
+else
+    echo "[INFO]: App ID, Pass Key and Tenant Id arguments provided. Using non interactive mode..."
+    az login --service-principal -u ${APP_ID} -p ${PASS_KEY}> --tenant ${TENANT_ID}
+fi
+
 az group delete --name ${RG_NAME} --yes --no-wait

@@ -20,7 +20,7 @@ EOUSAGE
 CLUSTER_SIZE=3
 DISK_SIZE_GB=200
 DISK_SKU="Standard_LRS"
-while getopts "h?:g:r:c:n:s:d:t:" opt; do
+while getopts "h?:g:r:c:n:s:d:t:a:p:u:" opt; do
     case "$opt" in
     h|\?)
         printUsage
@@ -39,6 +39,12 @@ while getopts "h?:g:r:c:n:s:d:t:" opt; do
     s)  DISK_SIZE_GB=$OPTARG
         ;;
     d)  DISK_SKU=$OPTARG
+        ;;
+    a)  APP_ID=$OPTARG
+        ;;
+    p)  PASS_KEY=$OPTARG
+        ;;
+    u)  TENANT_ID=$OPTARG
         ;;
     :)
         echo "[ERROR] Option -$OPTARG requires an argument." >&2
@@ -69,8 +75,14 @@ fi
 
 source .creds.env
 
-# @TODO: make login non-interactive
-az login
+if [[ (-z ${APP_ID}) || (-z ${PASS_KEY}) || (-z ${TENANT_ID}) ]]; then
+    echo "[INFO]: App ID, Pass Key and Tenant Id arguments missing. Using interactive mode..."
+    az login
+else
+    echo "[INFO]: App ID, Pass Key and Tenant Id arguments provided. Using non interactive mode..."
+    az login --service-principal -u ${APP_ID} -p ${PASS_KEY}> --tenant ${TENANT_ID}
+fi
+
 az group create --name ${RG_NAME} --location ${REGION}
 
 echo "Create Virtual Network"
