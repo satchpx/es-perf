@@ -5,6 +5,10 @@ printUsage() {
 Usage:
     destroy.sh
       -g <Resource Group Name to destroy>
+      -a <App ID> [Optional, will interactively prompt if not provided]
+      -p <App Passwd> [Optional, will interactively prompt if not provided]
+      -u <Tenant ID> [Optional, will interactively prompt if not provided]
+
 
 EOUSAGE
     echo "Example: destroy.sh -g sathya-px-rg"
